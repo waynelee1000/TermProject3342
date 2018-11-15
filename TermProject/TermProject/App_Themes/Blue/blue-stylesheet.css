@@ -1,0 +1,16 @@
+﻿/* All Pages Styling */
+header {
+    height: 40px;
+    width: 100%;
+    background-color: #3C5A99;
+}
+
+.logo {
+    float: left;
+    height: 40px;
+}
+
+body {
+    margin: 0;
+    background-color: #EAEBEF;
+}

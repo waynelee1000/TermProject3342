@@ -67,12 +67,64 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Blue\blue-stylesheet.css" />
+    <Content Include="App_Themes\Login\login-stylesheet.css" />
+    <Content Include="App_Themes\Dark\dark-stylesheet.css" />
+    <Content Include="App_Themes\Light\light-stylesheet.css" />
+    <Content Include="Images\fb-square-blue.png" />
+    <Content Include="Images\fb-square-white.jpg" />
+    <Content Include="Images\fb-white-logo.png" />
+    <Content Include="Images\fb-word-white.png" />
+    <Content Include="Login Pages\login-help.aspx" />
+    <Content Include="Login Pages\login.aspx" />
+    <Content Include="Main Pages\newsfeed.aspx" />
+    <Content Include="Main Pages\preferences.aspx" />
+    <Content Include="Main Pages\profile.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Login Pages\login-help.aspx.cs">
+      <DependentUpon>login-help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login Pages\login-help.aspx.designer.cs">
+      <DependentUpon>login-help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login Pages\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login Pages\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main Pages\newsfeed.aspx.cs">
+      <DependentUpon>newsfeed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main Pages\newsfeed.aspx.designer.cs">
+      <DependentUpon>newsfeed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main Pages\preferences.aspx.cs">
+      <DependentUpon>preferences.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main Pages\preferences.aspx.designer.cs">
+      <DependentUpon>preferences.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main Pages\profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main Pages\profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Light\light_default.skin" />
+    <Content Include="App_Themes\Login\login_default.skin" />
+    <Content Include="App_Themes\Dark\dark-default.skin" />
+    <Content Include="App_Themes\Blue\blue-default.skin" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -91,6 +143,7 @@
       <Name>Utilities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
