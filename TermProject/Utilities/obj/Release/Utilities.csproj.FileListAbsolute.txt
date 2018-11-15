@@ -1,0 +1,11 @@
+C:\Users\wayne\Desktop\Project2\MusicStoreProject\Utilities\bin\Release\Utilities.dll
+C:\Users\wayne\Desktop\Project2\MusicStoreProject\Utilities\bin\Release\Utilities.pdb
+C:\Users\wayne\Desktop\Project2\MusicStoreProject\Utilities\obj\Release\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\wayne\Desktop\Project2\MusicStoreProject\Utilities\obj\Release\Utilities.dll
+C:\Users\wayne\Desktop\Project2\MusicStoreProject\Utilities\obj\Release\Utilities.pdb
+C:\Users\wayne\Desktop\Github\Project4\CreditCardSite\Utilities\bin\Release\Utilities.dll
+C:\Users\wayne\Desktop\Github\Project4\CreditCardSite\Utilities\bin\Release\Utilities.pdb
+C:\Users\wayne\Desktop\Github\Project4\CreditCardSite\Utilities\obj\Release\Utilities.csprojAssemblyReference.cache
+C:\Users\wayne\Desktop\Github\Project4\CreditCardSite\Utilities\obj\Release\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\wayne\Desktop\Github\Project4\CreditCardSite\Utilities\obj\Release\Utilities.dll
+C:\Users\wayne\Desktop\Github\Project4\CreditCardSite\Utilities\obj\Release\Utilities.pdb
