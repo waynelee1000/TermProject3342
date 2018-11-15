@@ -1,0 +1,6 @@
+C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\bin\Debug\Classes.dll
+C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\bin\Debug\Classes.pdb
+C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\obj\Debug\Classes.csprojAssemblyReference.cache
+C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
+C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\obj\Debug\Classes.dll
+C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\obj\Debug\Classes.pdb
