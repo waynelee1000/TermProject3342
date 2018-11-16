@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Classes;
 
 namespace TermProject
 {
@@ -26,6 +27,23 @@ namespace TermProject
 
         protected void register_Btn_Click(object sender, EventArgs e)
         {
+            UserRegistration userRegistration = new UserRegistration();
+            User user = new User();
+
+            user.LoginID = register_emailTxt.Text;
+            user.Password = register_passwordTxt.Text;
+            user.Name = register_FirstNameTxt.Text + " " +register_LastNameTxt.Text;
+            user.PhoneNumber = register_PhoneTxt.Text;
+            user.Address = register_streetTxt.Text + " " + register_stateTxt.Text + " " + register_zipCodeTxt.Text;
+            user.SecurityQuestion1 = register_securityQ1Txt.Text;
+            user.SecurityQuestion2 = register_securityQ2Txt.Text;
+            user.SecurityAnswer1 = register_securityA1Txt.Text;
+            user.SecurityAnswer2 = register_securityA2Txt.Text;
+
+            lblTest.Text = userRegistration.registerUser(user);
+
+
+
             Response.Redirect("login-help.aspx");
         }
     }

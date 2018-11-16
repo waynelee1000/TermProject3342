@@ -48,6 +48,15 @@
             <label for="register_passwordTxt" >Password</label>
             <asp:TextBox ID="register_passwordTxt" runat="server"></asp:TextBox>
 
+             <label for="register_FirstNameTxt" >First Name</label>
+            <asp:TextBox ID="register_FirstNameTxt" runat="server"></asp:TextBox>
+
+            <label for="register_LastNameTxt" >Last Name</label>
+            <asp:TextBox ID="register_LastNameTxt" runat="server"></asp:TextBox>
+
+             <label for="register_PhoneTxt" >Phone Number</label>
+            <asp:TextBox ID="register_PhoneTxt" runat="server"></asp:TextBox>
+
             <label for="register_streetTxt" >Street Address</label>
             <asp:TextBox ID="register_streetTxt" runat="server"></asp:TextBox>
 
@@ -70,6 +79,8 @@
             <asp:TextBox ID="register_securityA2Txt" runat="server"></asp:TextBox>
 
             <asp:Button ID="register_Btn" runat="server" Text="Register" OnClick="register_Btn_Click"/>
+
+            <asp:Label ID="lblTest" runat="server" Text=""></asp:Label>
         </form>
     </div>
 </body>

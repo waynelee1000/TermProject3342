@@ -4,3 +4,12 @@ C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\obj\Debug\Cla
 C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
 C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\obj\Debug\Classes.dll
 C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\obj\Debug\Classes.pdb
+C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\bin\Debug\Classes.dll
+C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\bin\Debug\Classes.pdb
+C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\bin\Debug\Utilities.dll
+C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\bin\Debug\Utilities.pdb
+C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\obj\Debug\Classes.csprojAssemblyReference.cache
+C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\obj\Debug\Classes.csproj.CoreCompileInputs.cache
+C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\obj\Debug\Classes.csproj.CopyComplete
+C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\obj\Debug\Classes.dll
+C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\obj\Debug\Classes.pdb
