@@ -49,5 +49,24 @@ namespace Classes
 
             db.DoUpdateUsingCmdObj(sqlAddUser);
         }
+
+        public DataSet getFriend(string loginID)
+        {
+            DataSet myDS = new DataSet();
+            try
+            {
+                SqlCommand sqlGetFriend = new SqlCommand();
+                sqlGetFriend.CommandType = CommandType.StoredProcedure;
+                sqlGetFriend.CommandText = "TP_GetFriend";
+                sqlGetFriend.Parameters.Add(new SqlParameter("@LoginID", loginID));
+                myDS = db.GetDataSetUsingCmdObj(sqlGetFriend);
+                return myDS;
+            }
+            catch
+            {
+                return myDS;
+            }
+
+        }
     }
 }
