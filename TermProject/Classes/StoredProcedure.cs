@@ -68,5 +68,35 @@ namespace Classes
             }
 
         }
+
+        public DataSet getPreference(string loginID)
+        {
+            DataSet myDS = new DataSet();
+            try
+            {
+                SqlCommand sqlGetPreference = new SqlCommand();
+                sqlGetPreference.CommandType = CommandType.StoredProcedure;
+                sqlGetPreference.CommandText = "TP_GetUserPreference";
+                sqlGetPreference.Parameters.Add(new SqlParameter("@LoginID", loginID));
+                myDS = db.GetDataSetUsingCmdObj(sqlGetPreference);
+                return myDS;
+            }
+            catch
+            {
+                return myDS;
+            }
+
+        }
+
+        public void updateLoginPreference(string loginID, string loginPrefernce)
+        {
+            SqlCommand sqlUpdateLoginPref = new SqlCommand();
+            sqlUpdateLoginPref.CommandType = CommandType.StoredProcedure;
+            sqlUpdateLoginPref.CommandText = "TP_UpdateLoginPref";
+            sqlUpdateLoginPref.Parameters.Add(new SqlParameter("@LoginID", loginID));
+            sqlUpdateLoginPref.Parameters.Add(new SqlParameter("@LoginPreference", loginPrefernce));
+
+            db.DoUpdateUsingCmdObj(sqlUpdateLoginPref);
+        }
     }
 }

@@ -12,5 +12,20 @@
             <img src="../Images/fb-white-logo.png" class="logo"/>
         </a>
     </header>
+    <div>
+         <form id="LoginPrefFrm" runat="server">
+        Current Login Preference:
+        <asp:Label ID="lbl_CurrentLoginPref" runat="server" Text=""></asp:Label>
+        <br />
+
+        Change User Login Preference
+        <asp:DropDownList ID="DDL_LoginPref" runat="server">
+            <asp:ListItem Value="default">Default</asp:ListItem>
+            <asp:ListItem Value="assist">Assist</asp:ListItem>
+            <asp:ListItem Value="automatic">Automatic</asp:ListItem>
+        </asp:DropDownList>
+        <asp:Button ID="btn_LoginPref" runat="server" Text="Confirm" OnClick="btn_LoginPref_Click" />
+        </form>
+    </div>
 </body>
 </html>

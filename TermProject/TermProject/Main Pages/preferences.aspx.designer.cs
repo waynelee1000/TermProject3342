@@ -11,5 +11,41 @@ namespace TermProject.Main_Pages {
     
     
     public partial class preferences {
+        
+        /// <summary>
+        /// LoginPrefFrm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm LoginPrefFrm;
+        
+        /// <summary>
+        /// lbl_CurrentLoginPref control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_CurrentLoginPref;
+        
+        /// <summary>
+        /// DDL_LoginPref control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDL_LoginPref;
+        
+        /// <summary>
+        /// btn_LoginPref control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_LoginPref;
     }
 }
