@@ -31,6 +31,7 @@ namespace Classes
                 return "False";
             }
         }
+
         public void addUser(string loginID, string password, string name, string phoneNumber, string address, string securityQuestion1,
             string securityQuestion2, string securityAnswer1, string securityAnswer2)
         {
@@ -97,6 +98,26 @@ namespace Classes
             sqlUpdateLoginPref.Parameters.Add(new SqlParameter("@LoginPreference", loginPrefernce));
 
             db.DoUpdateUsingCmdObj(sqlUpdateLoginPref);
+        }
+
+        public DataSet checkLoginInfo(string loginID, string password)
+        {
+            DataSet loginDS = new DataSet();
+            try
+            {
+                SqlCommand sqlCheckLogin = new SqlCommand();
+                sqlCheckLogin.CommandType = CommandType.StoredProcedure;
+                sqlCheckLogin.CommandText = "TP_CheckLogin";
+                sqlCheckLogin.Parameters.Add(new SqlParameter("@theLoginID", loginID));
+                sqlCheckLogin.Parameters.Add(new SqlParameter("thePassword", password));
+
+                loginDS = db.GetDataSetUsingCmdObj(sqlCheckLogin);
+                return loginDS;
+            } 
+            catch
+            {
+                return loginDS; 
+            }
         }
     }
 }
