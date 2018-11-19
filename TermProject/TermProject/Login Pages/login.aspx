@@ -42,45 +42,52 @@
     <div id="registerDiv">
         <h1>Create a New Account</h1>
         <form id="registerFrm" runat="server">
-            <label for="register_emailTxt" >Email</label>
-            <asp:TextBox ID="register_emailTxt" runat="server"></asp:TextBox>
 
-            <label for="register_passwordTxt" >Password</label>
-            <asp:TextBox ID="register_passwordTxt" runat="server"></asp:TextBox>
+            <!-- Left -->
+            <div class="regFormat_Left">
+                <label for="register_emailTxt" >Email</label>
+                <asp:TextBox ID="register_emailTxt" runat="server"></asp:TextBox>
+                
+                <label for="register_FirstNameTxt" >First Name</label>
+                <asp:TextBox ID="register_FirstNameTxt" runat="server"></asp:TextBox>
+                
+                <label for="register_PhoneTxt" >Phone Number</label>
+                <asp:TextBox ID="register_PhoneTxt" runat="server"></asp:TextBox>
 
-             <label for="register_FirstNameTxt" >First Name</label>
-            <asp:TextBox ID="register_FirstNameTxt" runat="server"></asp:TextBox>
+                <label for="register_stateTxt" >State</label>
+                <asp:TextBox ID="register_stateTxt" runat="server"></asp:TextBox>
 
-            <label for="register_LastNameTxt" >Last Name</label>
-            <asp:TextBox ID="register_LastNameTxt" runat="server"></asp:TextBox>
+                <label for="register_securityQ1Txt" >Security Question 1</label>
+                <asp:TextBox ID="register_securityQ1Txt" runat="server"></asp:TextBox>
 
-             <label for="register_PhoneTxt" >Phone Number</label>
-            <asp:TextBox ID="register_PhoneTxt" runat="server"></asp:TextBox>
+                <label for="register_securityQ2Txt" >Security Question 2</label>
+                <asp:TextBox ID="register_securityQ2Txt" runat="server"></asp:TextBox>
 
-            <label for="register_streetTxt" >Street Address</label>
-            <asp:TextBox ID="register_streetTxt" runat="server"></asp:TextBox>
+                <asp:Label ID="lblTest" runat="server" Text=""></asp:Label>
+            </div>
 
-            <label for="register_stateTxt" >State</label>
-            <asp:TextBox ID="register_stateTxt" runat="server"></asp:TextBox>
+            <!-- Right -->
+            <div class="regFormat_Right">
+                <label for="register_passwordTxt" >Password</label>
+                <asp:TextBox ID="register_passwordTxt" runat="server"></asp:TextBox>                    
 
-            <label for="register_zipcodeTxt" >Zip Code</label>
-            <asp:TextBox ID="register_zipCodeTxt" runat="server"></asp:TextBox>
+                <label for="register_LastNameTxt" >Last Name</label>
+                <asp:TextBox ID="register_LastNameTxt" runat="server"></asp:TextBox>
 
-            <label for="register_securityQ1Txt" >Security Question 1</label>
-            <asp:TextBox ID="register_securityQ1Txt" runat="server"></asp:TextBox>
+                <label for="register_streetTxt" >Street Address</label>
+                <asp:TextBox ID="register_streetTxt" runat="server"></asp:TextBox>
 
-            <label for="register_securityA1Txt" >Answer</label>
-            <asp:TextBox ID="register_securityA1Txt" runat="server"></asp:TextBox>
+                <label for="register_zipcodeTxt" >Zip Code</label>
+                <asp:TextBox ID="register_zipCodeTxt" runat="server"></asp:TextBox>
 
-            <label for="register_securityQ2Txt" >Security Question 2</label>
-            <asp:TextBox ID="register_securityQ2Txt" runat="server"></asp:TextBox>
+                <label for="register_securityA1Txt" >Answer</label>
+                <asp:TextBox ID="register_securityA1Txt" runat="server"></asp:TextBox>
 
-            <label for="register_securityA2Txt" >Answer</label>
-            <asp:TextBox ID="register_securityA2Txt" runat="server"></asp:TextBox>
+                <label for="register_securityA2Txt" >Answer</label>
+                <asp:TextBox ID="register_securityA2Txt" runat="server"></asp:TextBox>
 
-            <asp:Button ID="register_Btn" runat="server" Text="Register" OnClick="register_Btn_Click"/>
-
-            <asp:Label ID="lblTest" runat="server" Text=""></asp:Label>
+                <asp:Button ID="register_Btn" runat="server" Text="Register" OnClick="register_Btn_Click"/>
+            </div>           
         </form>
     </div>
 </body>

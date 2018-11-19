@@ -31,15 +31,6 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.TextBox register_emailTxt;
         
         /// <summary>
-        /// register_passwordTxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox register_passwordTxt;
-        
-        /// <summary>
         /// register_FirstNameTxt control.
         /// </summary>
         /// <remarks>
@@ -47,15 +38,6 @@ namespace TermProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox register_FirstNameTxt;
-        
-        /// <summary>
-        /// register_LastNameTxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox register_LastNameTxt;
         
         /// <summary>
         /// register_PhoneTxt control.
@@ -67,15 +49,6 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.TextBox register_PhoneTxt;
         
         /// <summary>
-        /// register_streetTxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox register_streetTxt;
-        
-        /// <summary>
         /// register_stateTxt control.
         /// </summary>
         /// <remarks>
@@ -83,15 +56,6 @@ namespace TermProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox register_stateTxt;
-        
-        /// <summary>
-        /// register_zipCodeTxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox register_zipCodeTxt;
         
         /// <summary>
         /// register_securityQ1Txt control.
@@ -103,15 +67,6 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.TextBox register_securityQ1Txt;
         
         /// <summary>
-        /// register_securityA1Txt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox register_securityA1Txt;
-        
-        /// <summary>
         /// register_securityQ2Txt control.
         /// </summary>
         /// <remarks>
@@ -119,6 +74,60 @@ namespace TermProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox register_securityQ2Txt;
+        
+        /// <summary>
+        /// lblTest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTest;
+        
+        /// <summary>
+        /// register_passwordTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox register_passwordTxt;
+        
+        /// <summary>
+        /// register_LastNameTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox register_LastNameTxt;
+        
+        /// <summary>
+        /// register_streetTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox register_streetTxt;
+        
+        /// <summary>
+        /// register_zipCodeTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox register_zipCodeTxt;
+        
+        /// <summary>
+        /// register_securityA1Txt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox register_securityA1Txt;
         
         /// <summary>
         /// register_securityA2Txt control.
@@ -137,14 +146,5 @@ namespace TermProject {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button register_Btn;
-        
-        /// <summary>
-        /// lblTest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTest;
     }
 }
