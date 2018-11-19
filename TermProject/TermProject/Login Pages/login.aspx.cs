@@ -22,7 +22,16 @@ namespace TermProject
 
         protected void login_Btn_Click(object sender, EventArgs e)
         {
-
+            UserLogin userLogin = new UserLogin();
+            string result = userLogin.loginUser(Request["login_emailTxt"], Request["login_passwordTxt"]);
+            
+            if (result == "False")
+            {
+                
+            } else
+            {
+                Response.Redirect("newsfeed.aspx");
+            }
         }
 
         protected void register_Btn_Click(object sender, EventArgs e)
@@ -43,8 +52,8 @@ namespace TermProject
             lblTest.Text = userRegistration.registerUser(user);
 
 
-
-            Response.Redirect("login-help.aspx");
+            // Changed to redirect to preferences page -zach
+            Response.Redirect("preferences.aspx");
         }
     }
 }

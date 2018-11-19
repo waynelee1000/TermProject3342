@@ -13,3 +13,6 @@ C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\obj\Debug\Clas
 C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\obj\Debug\Classes.csproj.CopyComplete
 C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\obj\Debug\Classes.dll
 C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\Classes\obj\Debug\Classes.pdb
+C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\bin\Debug\Utilities.dll
+C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\bin\Debug\Utilities.pdb
+C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\Classes\obj\Debug\Classes.csproj.CopyComplete
