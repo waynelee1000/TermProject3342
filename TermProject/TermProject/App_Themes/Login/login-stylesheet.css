@@ -71,8 +71,45 @@ body {
     border: inset thin gray;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 10px;
+    overflow: auto;
 }
 
 #registerDiv h1 {
     margin: 0;
+}
+
+.regFormat {
+    display: block;
+}
+
+.regFormat_Left {
+    float: left;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+
+.regFormat_Left input {
+    display: block;
+}
+
+.regFormat_Right {
+    float: left;
+    padding-left: 5px;
+    padding-left: 0;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.regFormat_Right input {
+    display: block;
+}
+
+#register_Btn {
+    margin: 5px;
+    padding: 5px;
+    display: block;
+}
+
+#registerFrm {
+    clear: both;
 }
