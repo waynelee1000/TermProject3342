@@ -18,7 +18,7 @@ namespace Classes
             DataSet ds = new DataSet();
             ds = storedProcedure.checkLoginInfo(loginID, password);
 
-            if (ds == null)
+            if (ds == null )
             {
                 return "Error";
             }
@@ -29,3 +29,4 @@ namespace Classes
         }
     }
 }
+

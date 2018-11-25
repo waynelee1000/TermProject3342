@@ -23,14 +23,10 @@ namespace TermProject
         protected void login_Btn_Click(object sender, EventArgs e)
         {
             UserLogin userLogin = new UserLogin();
-            string result = userLogin.loginUser(Request["login_emailTxt"], Request["login_passwordTxt"]);
-            
-            if (result == "False")
+            string result = userLogin.loginUser(login_emailTxt.Text, login_passwordTxt.Text);
+            if (result != "Error")
             {
-                
-            } else
-            {
-                Response.Redirect("newsfeed.aspx");
+                Response.Redirect(url: "~/Main Pages/newsfeed.aspx");
             }
         }
 

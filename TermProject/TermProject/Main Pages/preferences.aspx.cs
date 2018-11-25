@@ -32,5 +32,14 @@ namespace TermProject.Main_Pages
            lbl_CurrentLoginPref.Text = newLoginPref;
 
         }
+
+        protected void btn_PrivacyPref_Click(object sender, EventArgs e)
+        {
+            string newPhotosPref = photosDDL.SelectedValue.ToString();
+            string newProfilePref = profileDDL.SelectedValue.ToString();
+            string newContactPref = contactDDL.SelectedValue.ToString();
+
+            // Insert privacy pref change handling here
+        }
     }
 }

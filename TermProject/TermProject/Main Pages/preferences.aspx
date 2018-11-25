@@ -12,19 +12,49 @@
             <img src="../Images/fb-white-logo.png" class="logo"/>
         </a>
     </header>
-    <div>
-         <form id="LoginPrefFrm" runat="server">
-        Current Login Preference:
-        <asp:Label ID="lbl_CurrentLoginPref" runat="server" Text=""></asp:Label>
-        <br />
+    <div id="main">
+        <form id="PrefFrm" runat="server">
+            <fieldset>
+                <legend>Login Settings</legend>
 
-        Change User Login Preference
-        <asp:DropDownList ID="DDL_LoginPref" runat="server">
-            <asp:ListItem Value="default">Default</asp:ListItem>
-            <asp:ListItem Value="assist">Assist</asp:ListItem>
-            <asp:ListItem Value="automatic">Automatic</asp:ListItem>
-        </asp:DropDownList>
-        <asp:Button ID="btn_LoginPref" runat="server" Text="Confirm" OnClick="btn_LoginPref_Click" />
+                Current Login Preference:
+                <asp:Label ID="lbl_CurrentLoginPref" runat="server" Text=""></asp:Label><br />
+
+                Change User Login Preference
+                <asp:DropDownList ID="DDL_LoginPref" runat="server">
+                    <asp:ListItem Value="default">Default</asp:ListItem>
+                    <asp:ListItem Value="assist">Assist</asp:ListItem>
+                    <asp:ListItem Value="automatic">Automatic</asp:ListItem>
+                </asp:DropDownList>
+
+                <asp:Button ID="btn_LoginPref" runat="server" Text="Confirm" OnClick="btn_LoginPref_Click" />
+            </fieldset>
+            <fieldset>
+                <legend>Privacy Settings</legend>
+
+                Who can view your photos: 
+                <asp:DropDownList ID="photosDDL" runat="server">
+                    <asp:ListItem Value="public">Public</asp:ListItem>
+                    <asp:ListItem Value="friends">Friends Only</asp:ListItem>
+                    <asp:ListItem Value="relatedFriends">Friends of Friends</asp:ListItem>
+                </asp:DropDownList><br />
+
+                Who can view your profile details:
+                <asp:DropDownList ID="profileDDL" runat="server">
+                    <asp:ListItem Value="public">Public</asp:ListItem>
+                    <asp:ListItem Value="friends">Friends Only</asp:ListItem>
+                    <asp:ListItem Value="relatedFriends">Friends of Friends</asp:ListItem>
+                </asp:DropDownList><br />
+
+                Who can view your contact info:
+                <asp:DropDownList ID="contactDDL" runat="server">
+                    <asp:ListItem Value="public">Public</asp:ListItem>
+                    <asp:ListItem Value="friends">Friends Only</asp:ListItem>
+                    <asp:ListItem Value="relatedFriends">Friends of Friends</asp:ListItem>
+                </asp:DropDownList>
+
+                <asp:Button ID="btn_PrivacyPref" runat="server" Text="Confirm" OnClick="btn_PrivacyPref_Click"/>
+            </fieldset>
         </form>
     </div>
 </body>

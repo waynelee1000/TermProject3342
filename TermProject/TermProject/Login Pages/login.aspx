@@ -15,34 +15,37 @@
     <title>Facebook - Login or Register</title>
 </head>
 <body>
+    <form id="mainFrm" runat="server">
     <!-- Header with login controls -->
     <header>
         <a href="login.aspx">
             <img src="../Images/fb-word-white.png" class="logo"/>
         </a>      
+        
         <!-- Login form -->
-        <form id="loginFrm">
+        <div id="loginFrm">
             <div id="loginWrapper">
                 <div id="login_emailDiv">
                     <label for="login_emailTxt">Email</label>
-                    <input id="login_emailTxt" type="text" />
+                    <asp:TextBox ID="login_emailTxt" type="text" runat="server"/>
                 </div>
                 <div id="login_passwordDiv">
                     <label for="login_passwordTxt">Password</label>
-                    <input id="login_passwordTxt" type="text" />
+                    <asp:TextBox ID="login_passwordTxt" type="text" runat="server" />
                 </div>
             </div>
             <div id="login_optionsDiv">
-                <a id="login_helpLink" href="login-help.aspx">Forgot Login</a>
-                <input id="login_Btn" type="button" value="Login" onclick="login_Btn_Click();"/>
+                <a id="login_helpLink" href="login-help.aspx" runat="server">Forgot Login</a>
+                <asp:Button ID="login_Btn" type="button" value="Login" runat="server" OnClick="login_Btn_Click"/>
+
             </div>          
-        </form> 
+        </div>
     </header>
+
     <!-- Registration Form -->
     <div id="registerDiv">
         <h1>Create a New Account</h1>
-        <form id="registerFrm" runat="server">
-
+        <div id="registerFrm">
             <!-- Left -->
             <div class="regFormat_Left">
                 <label for="register_emailTxt" >Email</label>
@@ -88,7 +91,8 @@
 
                 <asp:Button ID="register_Btn" runat="server" Text="Register" OnClick="register_Btn_Click"/>
             </div>           
-        </form>
+        </div>
     </div>
+    </form>
 </body>
 </html>
