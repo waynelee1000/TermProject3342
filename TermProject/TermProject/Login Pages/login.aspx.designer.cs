@@ -13,13 +13,49 @@ namespace TermProject {
     public partial class login {
         
         /// <summary>
-        /// registerFrm control.
+        /// mainFrm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm registerFrm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm mainFrm;
+        
+        /// <summary>
+        /// login_emailTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox login_emailTxt;
+        
+        /// <summary>
+        /// login_passwordTxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox login_passwordTxt;
+        
+        /// <summary>
+        /// login_helpLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor login_helpLink;
+        
+        /// <summary>
+        /// login_Btn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button login_Btn;
         
         /// <summary>
         /// register_emailTxt control.

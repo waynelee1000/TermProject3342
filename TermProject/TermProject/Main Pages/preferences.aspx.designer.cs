@@ -13,13 +13,13 @@ namespace TermProject.Main_Pages {
     public partial class preferences {
         
         /// <summary>
-        /// LoginPrefFrm control.
+        /// PrefFrm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm LoginPrefFrm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm PrefFrm;
         
         /// <summary>
         /// lbl_CurrentLoginPref control.
@@ -47,5 +47,41 @@ namespace TermProject.Main_Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_LoginPref;
+        
+        /// <summary>
+        /// photosDDL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList photosDDL;
+        
+        /// <summary>
+        /// profileDDL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList profileDDL;
+        
+        /// <summary>
+        /// contactDDL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList contactDDL;
+        
+        /// <summary>
+        /// btn_PrivacyPref control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_PrivacyPref;
     }
 }
