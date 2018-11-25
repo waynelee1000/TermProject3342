@@ -15,9 +15,25 @@ namespace TermProject
             Theme = "Login";
         }
 
-            protected void Page_Load(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
+            Session["LoginStatus"] = "False";
 
+            if (HttpContext.Current.Request.Cookies["UserCookie"] != null)
+            {
+                HttpCookie userCookie = Request.Cookies["UserCookie"];
+                if (userCookie.Values["Preference"].ToString() == "automatic")
+                {
+                    login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                    login_passwordTxt.Text = userCookie.Values["Password"].ToString();
+                }
+                else if (userCookie.Values["Preference"].ToString() == "assist")
+                {
+                    login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                }
+
+
+            }
         }
 
         protected void login_Btn_Click(object sender, EventArgs e)
@@ -26,6 +42,17 @@ namespace TermProject
             string result = userLogin.loginUser(login_emailTxt.Text, login_passwordTxt.Text);
             if (result != "Error")
             {
+                Preference preference = new Preference(login_emailTxt.Text);
+
+                HttpCookie userCookie = new HttpCookie("UserCookie");
+
+                userCookie.Values["Username"] = login_emailTxt.Text;
+                userCookie.Values["Password"] = login_passwordTxt.Text;
+                userCookie.Values["Preference"] = preference.LoginPreference;
+                userCookie.Expires = new DateTime(2025, 1, 1);
+                Response.Cookies.Add(userCookie);
+                Session["LoginStatus"] = true;
+
                 Response.Redirect(url: "~/Main Pages/newsfeed.aspx");
             }
         }
@@ -49,7 +76,7 @@ namespace TermProject
 
 
             // Changed to redirect to preferences page -zach
-            Response.Redirect("preferences.aspx");
+            Response.Redirect("~/Main Pages/preferences.aspx");
         }
     }
 }

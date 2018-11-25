@@ -10,7 +10,7 @@ namespace TermProject.Main_Pages
 {
     public partial class preferences : System.Web.UI.Page
     {
-        Preference myPreference = new Preference("gClooney@Test.com");
+
         //Temperorary loginID since Login cookie hasn't been created yet
         UpdatePreference updatePreference = new UpdatePreference();
         protected void Page_PreInit(object sender, EventArgs e)
@@ -20,16 +20,39 @@ namespace TermProject.Main_Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            lbl_CurrentLoginPref.Text = myPreference.LoginPreference;
+            try
+            {
+                if (Session["LoginStatus"].ToString() == "False")
+                {
+                    Response.Redirect("~/Login Pages/login.aspx");
+                }
+            }
+            catch
+            {
+                Response.Redirect("~/Login Pages/login.aspx");
+            }
+            HttpCookie userCookie = Request.Cookies["UserCookie"];
+            string prefereceString = userCookie.Values["Preference"].ToString();
+
+            lbl_CurrentLoginPref.Text = prefereceString;
         }
 
         protected void btn_LoginPref_Click(object sender, EventArgs e)
         {
-           string newLoginPref =  DDL_LoginPref.SelectedValue.ToString();
+            HttpCookie userCookie = Request.Cookies["UserCookie"];
 
-           updatePreference.updateLoginPref("gClooney@Test.com", newLoginPref);
+            string newLoginPref =  DDL_LoginPref.SelectedValue.ToString();
 
-           lbl_CurrentLoginPref.Text = newLoginPref;
+            updatePreference.updateLoginPref(userCookie.Values["Username"].ToString(), newLoginPref);
+
+            lbl_CurrentLoginPref.Text = newLoginPref;
+
+            userCookie.Values["Username"] = userCookie.Values["Username"].ToString();
+            userCookie.Values["Password"] = userCookie.Values["Password"].ToString();
+            userCookie.Values["Preference"] = newLoginPref;
+            userCookie.Expires = new DateTime(2025, 1, 1);
+            Response.Cookies.Add(userCookie);
+            
 
         }
 

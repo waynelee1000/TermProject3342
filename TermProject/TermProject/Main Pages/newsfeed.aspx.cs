@@ -16,7 +16,17 @@ namespace TermProject.Main_Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (Session["LoginStatus"].ToString() == "False")
+                {
+                    Response.Redirect("~/Login Pages/login.aspx");
+                }
+            }
+            catch
+            {
+                Response.Redirect("~/Login Pages/login.aspx");
+            }
         }
     }
 }
