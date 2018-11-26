@@ -109,7 +109,7 @@ namespace Classes
                 sqlCheckLogin.CommandType = CommandType.StoredProcedure;
                 sqlCheckLogin.CommandText = "TP_CheckLogin";
                 sqlCheckLogin.Parameters.Add(new SqlParameter("@theLoginID", loginID));
-                sqlCheckLogin.Parameters.Add(new SqlParameter("thePassword", password));
+                sqlCheckLogin.Parameters.Add(new SqlParameter("@thePassword", password));
 
                 loginDS = db.GetDataSetUsingCmdObj(sqlCheckLogin);
                 return loginDS;

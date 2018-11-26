@@ -12,7 +12,7 @@
             <a href="newsfeed.aspx">
                 <img src="../Images/fb-white-logo.png" class="logo"/>
             </a>
-            <div id="headerButtons">
+            <div id="headerButtons" style="float:right;">
                 <asp:Button class="headerBtn" ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />
                 <asp:Button class="headerBtn" ID="prefBtn" runat="server" Text="Settings" OnClick="prefBtn_Click"/>
             </div>

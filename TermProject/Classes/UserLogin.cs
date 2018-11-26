@@ -18,7 +18,7 @@ namespace Classes
             DataSet ds = new DataSet();
             ds = storedProcedure.checkLoginInfo(loginID, password);
 
-            if (ds == null )
+            if (ds.Tables[0].Rows.Count<1 )
             {
                 return "Error";
             }

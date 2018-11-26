@@ -8,8 +8,9 @@
 </head>
 <body>
     <header>  
-        <a href="login.aspx">
+        <a href="login.aspx" style="color:snow;">
             <img src="../Images/fb-word-white.png" class="logo"/>
+            <h2>Home</h2>
         </a>
     </header>
     <div id="main">

@@ -11,8 +11,11 @@
     <header>
         <a href="newsfeed.aspx">
             <img src="../Images/fb-white-logo.png" class="logo"/>
+            <a style="color:snow;display:inline;" href="newsfeed.aspx"><h2>Newsfeed</h2></a>
         </a>
+        <div style="float:right; display:inline;">
         <asp:Button ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click"/>
+            </div>
     </header>
     <div id="main">
             <fieldset>

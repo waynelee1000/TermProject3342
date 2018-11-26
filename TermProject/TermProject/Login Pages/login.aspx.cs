@@ -17,24 +17,57 @@ namespace TermProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["LoginStatus"] = "False";
+            HttpCookie userCookie = Request.Cookies["UserCookie"];
 
-            if (HttpContext.Current.Request.Cookies["UserCookie"] != null)
+            if (Session["LoginStatus"] != null)
             {
-                HttpCookie userCookie = Request.Cookies["UserCookie"];
+                if (Session["LoginStatus"].ToString() == "False")
+                {
+                    if (userCookie.Values["Preference"].ToString() == "automatic")
+                    {
+                        login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                        Preference preference = new Preference(login_emailTxt.Text);
 
+                        userCookie.Values["Username"] = login_emailTxt.Text;
+                        userCookie.Values["Password"] = "";
+                        userCookie.Values["Preference"] = preference.LoginPreference;
+                        userCookie.Expires = new DateTime(2025, 1, 1);
+                        Response.Cookies.Add(userCookie);
+
+                    }
+                    else if (userCookie.Values["Preference"].ToString() == "assist")
+                    {
+                        login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                    }
+                }
+
+                else
+                {
+
+                    if (userCookie.Values["Preference"].ToString() == "automatic")
+                    {
+                        login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                        Session["LoginStatus"] = "True";
+
+                        Response.Redirect(url: "~/Main Pages/newsfeed.aspx");
+
+                    }
+                    else if (userCookie.Values["Preference"].ToString() == "assist")
+                    {
+                        login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                    }
+                }
+            }
+            else
+            {
                 if (userCookie.Values["Preference"].ToString() == "automatic")
                 {
-                    Session["LoginStatus"] = "True";
-
-                    Response.Redirect(url: "~/Main Pages/newsfeed.aspx");
+                    login_emailTxt.Text = userCookie.Values["Username"].ToString();
                 }
                 else if (userCookie.Values["Preference"].ToString() == "assist")
                 {
                     login_emailTxt.Text = userCookie.Values["Username"].ToString();
                 }
-
-
             }
         }
 
@@ -42,7 +75,7 @@ namespace TermProject
         {
             UserLogin userLogin = new UserLogin();
             string result = userLogin.loginUser(login_emailTxt.Text, login_passwordTxt.Text);
-            if (result != "")
+            if (result != "Error")
             {
                 Preference preference = new Preference(login_emailTxt.Text);
 
@@ -56,6 +89,8 @@ namespace TermProject
                 Session["LoginStatus"] = "True";
 
                 lblErrorLogin.Text = "";
+
+                Session["LoginStatus"] = "True";
 
                 Response.Redirect(url: "~/Main Pages/newsfeed.aspx");
             }

@@ -20,8 +20,6 @@ namespace TermProject.Main_Pages
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpCookie userCookie = Request.Cookies["UserCookie"];
-            string prefereceString = userCookie.Values["Preference"].ToString();
 
             try
             {
@@ -38,7 +36,8 @@ namespace TermProject.Main_Pages
             {
                 Response.Redirect("~/Login Pages/login.aspx");
             }
-
+            HttpCookie userCookie = Request.Cookies["UserCookie"];
+            string prefereceString = userCookie.Values["Preference"].ToString();
             lbl_CurrentLoginPref.Text = prefereceString;
         }
 
@@ -78,9 +77,7 @@ namespace TermProject.Main_Pages
 
         protected void logoutBtn_Click(object sender, EventArgs e)
         {
-            HttpCookie userCookie = Request.Cookies["UserCookie"];
-            userCookie.Expires = DateTime.Now.AddDays(-1);
-            Response.Cookies.Add(userCookie);
+            Session["LoginStatus"] = "False";
 
             Response.Redirect("~/Login Pages/login.aspx");
         }
