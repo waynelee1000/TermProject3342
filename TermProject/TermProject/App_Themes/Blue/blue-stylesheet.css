@@ -14,3 +14,10 @@ body {
     margin: 0;
     background-color: #EAEBEF;
 }
+
+#main {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5px;
+    background-color: white;
+}

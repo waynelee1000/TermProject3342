@@ -19,7 +19,7 @@ namespace TermProject.Main_Pages
         }
 
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {/*
             try
             {
                 if (Session["LoginStatus"].ToString() == "False")
@@ -34,7 +34,7 @@ namespace TermProject.Main_Pages
             HttpCookie userCookie = Request.Cookies["UserCookie"];
             string prefereceString = userCookie.Values["Preference"].ToString();
 
-            lbl_CurrentLoginPref.Text = prefereceString;
+            lbl_CurrentLoginPref.Text = prefereceString;*/
         }
 
         protected void btn_LoginPref_Click(object sender, EventArgs e)
@@ -62,7 +62,13 @@ namespace TermProject.Main_Pages
             string newProfilePref = profileDDL.SelectedValue.ToString();
             string newContactPref = contactDDL.SelectedValue.ToString();
 
-            // Insert privacy pref change handling here
+            HttpCookie userCookie = Request.Cookies["UserCookie"];
+
+            userCookie.Values["Username"] = userCookie.Values["Username"].ToString();
+            userCookie.Values["Password"] = userCookie.Values["Password"].ToString();
+            userCookie.Values["PhotosPref"] = newPhotosPref;
+            userCookie.Values["ProfilePref"] = newProfilePref;
+            userCookie.Values["ContactPref"] = newContactPref;
         }
     }
 }
