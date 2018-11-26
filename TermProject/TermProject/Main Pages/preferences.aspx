@@ -7,13 +7,14 @@
     <title></title>
 </head>
 <body>
+    <form id="PrefFrm" runat="server">
     <header>
         <a href="newsfeed.aspx">
             <img src="../Images/fb-white-logo.png" class="logo"/>
         </a>
+        <asp:Button ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click"/>
     </header>
     <div id="main">
-        <form id="PrefFrm" runat="server">
             <fieldset>
                 <legend>Login Settings</legend>
 
@@ -54,8 +55,8 @@
                 </asp:DropDownList>
 
                 <asp:Button ID="btn_PrivacyPref" runat="server" Text="Confirm" OnClick="btn_PrivacyPref_Click"/>
-            </fieldset>
-        </form>
-    </div>
+            </fieldset>        
+        </div>
+    </form>
 </body>
 </html>

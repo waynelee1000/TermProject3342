@@ -39,5 +39,10 @@ namespace TermProject.Main_Pages
                 Response.Redirect("~/Login Pages/login.aspx");
             }
         }
+
+        protected void logoutBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

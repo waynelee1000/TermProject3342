@@ -80,5 +80,10 @@ namespace TermProject.Main_Pages
             userCookie.Values["ProfilePref"] = newProfilePref;
             userCookie.Values["ContactPref"] = newContactPref;
         }
+
+        protected void logoutBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
