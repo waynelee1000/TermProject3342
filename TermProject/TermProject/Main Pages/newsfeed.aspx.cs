@@ -15,7 +15,7 @@ namespace TermProject.Main_Pages
         }
 
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {/*
             try
             {
                 HttpCookie userCookie = Request.Cookies["UserCookie"];
@@ -37,12 +37,17 @@ namespace TermProject.Main_Pages
             catch
             {
                 Response.Redirect("~/Login Pages/login.aspx");
-            }
+            }*/
         }
 
         protected void logoutBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void prefBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Main Pages/preferences.aspx");
         }
     }
 }
