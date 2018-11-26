@@ -18,10 +18,21 @@ namespace TermProject.Main_Pages
         {
             try
             {
-                if (Session["LoginStatus"].ToString() == "False")
+                HttpCookie userCookie = Request.Cookies["UserCookie"];
+                string prefereceString = userCookie.Values["Preference"].ToString();
+
+                if (prefereceString != "automatic")
                 {
-                    Response.Redirect("~/Login Pages/login.aspx");
+                    if (Session["LoginStatus"].ToString() == "False")
+                    {
+                        Response.Redirect("~/Login Pages/login.aspx");
+                    }
                 }
+                else
+                {
+                    Session["LoginStatus"] = true;
+                }
+
             }
             catch
             {

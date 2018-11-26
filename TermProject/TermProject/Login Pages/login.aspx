@@ -36,7 +36,7 @@
             </div>
             <div id="login_optionsDiv">
                 <a id="login_helpLink" href="login-help.aspx" runat="server">Forgot Login</a>
-                <asp:Button ID="login_Btn" type="button" value="Login" runat="server" OnClick="login_Btn_Click"/>
+                <asp:Button ID="login_Btn" type="button" Text="Login" value="Login" runat="server" OnClick="login_Btn_Click"/>
 
             </div>          
         </div>
