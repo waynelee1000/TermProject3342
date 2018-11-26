@@ -19,32 +19,27 @@ namespace TermProject.Main_Pages
         }
 
         protected void Page_Load(object sender, EventArgs e)
-        {/*
+        {
+            HttpCookie userCookie = Request.Cookies["UserCookie"];
+            string prefereceString = userCookie.Values["Preference"].ToString();
+
             try
             {
-                HttpCookie userCookie = Request.Cookies["UserCookie"];
-                string prefereceString = userCookie.Values["Preference"].ToString();
-
-                if (prefereceString != "automatic")
+                if (Session["LoginStatus"].ToString() == "False")
                 {
-                    if (Session["LoginStatus"].ToString() == "False")
-                    {
-                        Response.Redirect("~/Login Pages/login.aspx");
-                    }
+                    Response.Redirect("~/Login Pages/login.aspx");
                 }
                 else
                 {
-                    Session["LoginStatus"] = true;
+                    Session["LoginStatus"] = "True";
                 }
             }
             catch
             {
                 Response.Redirect("~/Login Pages/login.aspx");
             }
-            HttpCookie userCookie = Request.Cookies["UserCookie"];
-            string prefereceString = userCookie.Values["Preference"].ToString();
 
-            lbl_CurrentLoginPref.Text = prefereceString;*/
+            lbl_CurrentLoginPref.Text = prefereceString;
         }
 
         protected void btn_LoginPref_Click(object sender, EventArgs e)
@@ -83,7 +78,11 @@ namespace TermProject.Main_Pages
 
         protected void logoutBtn_Click(object sender, EventArgs e)
         {
+            HttpCookie userCookie = Request.Cookies["UserCookie"];
+            userCookie.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(userCookie);
 
+            Response.Redirect("~/Login Pages/login.aspx");
         }
     }
 }

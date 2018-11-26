@@ -22,10 +22,12 @@ namespace TermProject
             if (HttpContext.Current.Request.Cookies["UserCookie"] != null)
             {
                 HttpCookie userCookie = Request.Cookies["UserCookie"];
+
                 if (userCookie.Values["Preference"].ToString() == "automatic")
                 {
-                    login_emailTxt.Text = userCookie.Values["Username"].ToString();
-                    login_passwordTxt.Text = userCookie.Values["Password"].ToString();
+                    Session["LoginStatus"] = "True";
+
+                    Response.Redirect(url: "~/Main Pages/newsfeed.aspx");
                 }
                 else if (userCookie.Values["Preference"].ToString() == "assist")
                 {
@@ -40,7 +42,7 @@ namespace TermProject
         {
             UserLogin userLogin = new UserLogin();
             string result = userLogin.loginUser(login_emailTxt.Text, login_passwordTxt.Text);
-            if (result != "Error")
+            if (result != "")
             {
                 Preference preference = new Preference(login_emailTxt.Text);
 
@@ -51,9 +53,15 @@ namespace TermProject
                 userCookie.Values["Preference"] = preference.LoginPreference;
                 userCookie.Expires = new DateTime(2025, 1, 1);
                 Response.Cookies.Add(userCookie);
-                Session["LoginStatus"] = true;
+                Session["LoginStatus"] = "True";
+
+                lblErrorLogin.Text = "";
 
                 Response.Redirect(url: "~/Main Pages/newsfeed.aspx");
+            }
+            else
+            {
+                lblErrorLogin.Text = "Incorrect Username or Password";
             }
         }
 

@@ -14,7 +14,7 @@
     </header>
     <div id="main">
         <form id="helpFrm" runat="server">
-            <asp:TextBox ID="userTxt" runat="server"></asp:TextBox>
+            &nbsp;Enter Username:<asp:TextBox ID="userTxt" runat="server"></asp:TextBox>
             <asp:Button ID="getSecurityBtn" runat="server" Text="Submit" OnClick="getSecurityBtn_Click"/><br />
 
             <fieldset>
@@ -25,7 +25,7 @@
                 <asp:TextBox ID="Q2Answer" runat="server"></asp:TextBox><br />
                 <asp:Button ID="sumbitBtn" runat="server" Text="Submit" OnClick="sumbitBtn_Click"/>
             </fieldset>
-            <asp:Label ID="passwordLbl" runat="server" Text="Label"></asp:Label>
+            <asp:Label ID="passwordLbl" runat="server" Text=""></asp:Label>
         </form>
     </div>
 </body>

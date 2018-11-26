@@ -25,6 +25,9 @@
         <!-- Login form -->
         <div id="loginFrm">
             <div id="loginWrapper">
+                <div>
+                    <asp:Label ID="lblErrorLogin" runat="server" BackColor="White" Text=""></asp:Label>
+                </div>
                 <div id="login_emailDiv">
                     <label for="login_emailTxt">Email</label>
                     <asp:TextBox ID="login_emailTxt" type="text" runat="server"/>
