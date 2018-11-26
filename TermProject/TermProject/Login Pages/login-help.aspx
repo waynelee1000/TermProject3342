@@ -15,15 +15,17 @@
     <div id="main">
         <form id="helpFrm" runat="server">
             &nbsp;Enter Username:<asp:TextBox ID="userTxt" runat="server"></asp:TextBox>
-            <asp:Button ID="getSecurityBtn" runat="server" Text="Submit" OnClick="getSecurityBtn_Click"/><br />
+            <asp:Button ID="getSecurityBtn" runat="server" Text="Submit" OnClick="getSecurityBtn_Click"/>
+            <asp:Label ID="lblRecoveryError" runat="server" Text=""></asp:Label>
+            <br />
 
             <fieldset>
                 <legend>Security Questions</legend>
                 <asp:Label ID="Q1Lbl" runat="server" Text=""></asp:Label>
-                <asp:TextBox ID="Q1Answer" runat="server"></asp:TextBox><br />
+                <asp:TextBox ID="Q1Answer" runat="server" Visible ="false"></asp:TextBox><br />
                 <asp:Label ID="Q2Lbl" runat="server" Text=""></asp:Label>
-                <asp:TextBox ID="Q2Answer" runat="server"></asp:TextBox><br />
-                <asp:Button ID="sumbitBtn" runat="server" Text="Submit" OnClick="sumbitBtn_Click"/>
+                <asp:TextBox ID="Q2Answer" runat="server" Visible ="false" ></asp:TextBox><br />
+                <asp:Button ID="sumbitBtn" runat="server" Visible ="false" Text="Submit" OnClick="sumbitBtn_Click"/>
             </fieldset>
             <asp:Label ID="passwordLbl" runat="server" Text=""></asp:Label>
         </form>

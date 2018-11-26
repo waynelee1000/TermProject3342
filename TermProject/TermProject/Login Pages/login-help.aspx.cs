@@ -27,8 +27,19 @@ namespace TermProject.Login_Pages
             ForgotLogin getForgot = new ForgotLogin();
             string[] result = getForgot.getQuestions(userID);
 
-            Q1Lbl.Text = result[0];
-            Q2Lbl.Text = result[1];
+            try
+            {
+                Q1Lbl.Text = result[0].ToString();
+                Q2Lbl.Text = result[1].ToString();
+                Q1Answer.Visible = true;
+                Q2Answer.Visible = true;
+                sumbitBtn.Visible = true;
+            }
+            catch
+            {
+                lblRecoveryError.Text = "Incorrect UserName";
+            }
+
             
         }
 
@@ -41,7 +52,7 @@ namespace TermProject.Login_Pages
 
             if(Q1Answer.Text == result[2] && Q2Answer.Text == result[3])
             {
-                passwordLbl.Text = result[4];
+                passwordLbl.Text = "Password:"+result[4];
             }
         }
     }

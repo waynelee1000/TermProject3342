@@ -34,7 +34,7 @@
                 </div>
                 <div id="login_passwordDiv">
                     <label for="login_passwordTxt">Password</label>
-                    <asp:TextBox ID="login_passwordTxt" type="text" runat="server" />
+                    <asp:TextBox ID="login_passwordTxt" type="text" runat="server" TextMode="Password" />
                 </div>
             </div>
             <div id="login_optionsDiv">
