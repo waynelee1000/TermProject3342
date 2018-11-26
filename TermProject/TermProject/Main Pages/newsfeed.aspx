@@ -11,6 +11,7 @@
         <a href="newsfeed.aspx">
             <img src="../Images/fb-white-logo.png" class="logo"/>
         </a>
+        <asp:Button ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />
     </header>
 </body>
 </html>
