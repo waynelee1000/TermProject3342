@@ -119,5 +119,24 @@ namespace Classes
                 return loginDS; 
             }
         }
+
+        public DataSet getSecurity(string loginID)
+        {
+            DataSet securityDS = new DataSet();
+            try
+            {
+                SqlCommand sqlCheckLogin = new SqlCommand();
+                sqlCheckLogin.CommandType = CommandType.StoredProcedure;
+                sqlCheckLogin.CommandText = "TP_GetSecurity";
+                sqlCheckLogin.Parameters.Add(new SqlParameter("@theLoginID", loginID));
+
+                securityDS = db.GetDataSetUsingCmdObj(sqlCheckLogin);
+                return securityDS;
+            }
+            catch
+            {
+                return securityDS;
+            }
+        }
     }
 }

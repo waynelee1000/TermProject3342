@@ -12,5 +12,21 @@
             <img src="../Images/fb-word-white.png" class="logo"/>
         </a>
     </header>
+    <div id="main">
+        <form id="helpFrm" runat="server">
+            <asp:TextBox ID="userTxt" runat="server"></asp:TextBox>
+            <asp:Button ID="getSecurityBtn" runat="server" Text="Submit" OnClick="getSecurityBtn_Click"/><br />
+
+            <fieldset>
+                <legend>Security Questions</legend>
+                <asp:Label ID="Q1Lbl" runat="server" Text=""></asp:Label>
+                <asp:TextBox ID="Q1Answer" runat="server"></asp:TextBox><br />
+                <asp:Label ID="Q2Lbl" runat="server" Text=""></asp:Label>
+                <asp:TextBox ID="Q2Answer" runat="server"></asp:TextBox><br />
+                <asp:Button ID="sumbitBtn" runat="server" Text="Submit" OnClick="sumbitBtn_Click"/>
+            </fieldset>
+            <asp:Label ID="passwordLbl" runat="server" Text="Label"></asp:Label>
+        </form>
+    </div>
 </body>
 </html>

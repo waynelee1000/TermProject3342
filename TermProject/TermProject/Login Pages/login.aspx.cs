@@ -61,10 +61,18 @@ namespace TermProject
         {
             UserRegistration userRegistration = new UserRegistration();
             User user = new User();
+            // Validation
+            if (register_emailTxt.Text == "" || register_passwordTxt.Text == "" || register_FirstNameTxt.Text == "" || register_LastNameTxt.Text == "" ||
+                register_PhoneTxt.Text == "" || register_streetTxt.Text == "" || register_stateTxt.Text == "" || register_zipCodeTxt.Text == "" ||
+                register_securityQ1Txt.Text == "" || register_securityQ2Txt.Text == "" || register_securityA1Txt.Text == "" || register_securityA2Txt.Text == "")
+            {
+                lblTest.Text = "Please fill out all fields";
+                return;
+            }
 
             user.LoginID = register_emailTxt.Text;
             user.Password = register_passwordTxt.Text;
-            user.Name = register_FirstNameTxt.Text + " " +register_LastNameTxt.Text;
+            user.Name = register_FirstNameTxt.Text + " " + register_LastNameTxt.Text;
             user.PhoneNumber = register_PhoneTxt.Text;
             user.Address = register_streetTxt.Text + " " + register_stateTxt.Text + " " + register_zipCodeTxt.Text;
             user.SecurityQuestion1 = register_securityQ1Txt.Text;
