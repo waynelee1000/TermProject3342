@@ -47,6 +47,8 @@ namespace Classes
             sqlAddUser.Parameters.Add(new SqlParameter("@SecurityQuestion2", securityQuestion2));
             sqlAddUser.Parameters.Add(new SqlParameter("@SecurityAnswer1", securityAnswer1));
             sqlAddUser.Parameters.Add(new SqlParameter("@SecurityAnswer2", securityAnswer2));
+            sqlAddUser.Parameters.Add(new SqlParameter("@LoginPreference", "Default"));
+            sqlAddUser.Parameters.Add(new SqlParameter("@Privacy", "Public"));
 
             db.DoUpdateUsingCmdObj(sqlAddUser);
         }

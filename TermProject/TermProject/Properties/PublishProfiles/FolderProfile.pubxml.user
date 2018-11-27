@@ -34,10 +34,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/26/2018 09:40:48</publishTime>
     </File>
     <File Include="bin/Classes.dll">
-      <publishTime>11/26/2018 19:11:00</publishTime>
+      <publishTime>11/26/2018 20:32:42</publishTime>
     </File>
     <File Include="bin/Classes.pdb">
-      <publishTime>11/26/2018 19:11:00</publishTime>
+      <publishTime>11/26/2018 20:32:42</publishTime>
     </File>
     <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
       <publishTime>11/26/2018 09:40:48</publishTime>
@@ -181,10 +181,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/26/2018 09:40:49</publishTime>
     </File>
     <File Include="bin/TermProject.dll">
-      <publishTime>11/26/2018 20:10:56</publishTime>
+      <publishTime>11/26/2018 20:32:42</publishTime>
     </File>
     <File Include="bin/TermProject.pdb">
-      <publishTime>11/26/2018 20:10:56</publishTime>
+      <publishTime>11/26/2018 20:32:42</publishTime>
     </File>
     <File Include="bin/Utilities.dll">
       <publishTime>11/26/2018 19:11:00</publishTime>
