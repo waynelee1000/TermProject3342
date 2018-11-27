@@ -126,6 +126,7 @@
     <Content Include="App_Themes\Dark\dark-default.skin" />
     <Content Include="App_Themes\Blue\blue-default.skin" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

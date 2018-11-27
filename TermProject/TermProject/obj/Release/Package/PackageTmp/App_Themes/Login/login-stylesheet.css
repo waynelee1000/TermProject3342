@@ -1,0 +1,115 @@
+﻿/* All Pages Styling */
+header {
+    height: 100px;
+    width: 100%;
+    background-color: #3C5A99;
+}
+
+.logo {
+    float: left;
+    height: 90px;
+}
+
+body {
+    margin: 0;
+    background-color: #EAEBEF;
+}
+
+/* Login/Register Page Styling */
+#loginFrm {
+    float: right;  
+    padding-top: 10px;
+    padding-right: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#loginFrm input  {
+    display: block;
+}
+
+#loginFrm label {
+    display: block;
+    color: white;
+}
+
+#login_emailDiv {
+    float: left;
+    padding-right: 2px;
+}
+
+#login_passwordDiv {
+    float: right;
+}
+
+#login_optionsDiv {
+    clear: both;
+    padding-top: 5px;
+    float: right;
+}
+
+#login_btn {
+    float: right;
+    color: black;
+}
+
+#login_helpLink {
+    float: left;
+    color: #dfe3ee;
+    text-decoration: none;
+    padding-right: 8px;
+}
+
+#login_helpLink:hover {
+    text-decoration: underline;
+}
+
+#registerDiv {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10px;
+    background-color: white;
+    border: inset thin gray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    overflow: auto;
+}
+
+#registerDiv h1 {
+    margin: 0;
+}
+
+.regFormat {
+    display: block;
+}
+
+.regFormat_Left {
+    float: left;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+
+.regFormat_Left input {
+    display: block;
+}
+
+.regFormat_Right {
+    float: left;
+    padding-left: 5px;
+    padding-left: 0;
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+
+.regFormat_Right input {
+    display: block;
+}
+
+#register_Btn {
+    margin: 5px;
+    padding: 5px;
+    display: block;
+}
+
+#registerFrm {
+    clear: both;
+}

@@ -1,0 +1,9 @@
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Classes\bin\Release\Classes.dll
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Classes\bin\Release\Classes.pdb
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Classes\bin\Release\Utilities.dll
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Classes\bin\Release\Utilities.pdb
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Classes\obj\Release\Classes.csprojAssemblyReference.cache
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Classes\obj\Release\Classes.csproj.CoreCompileInputs.cache
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Classes\obj\Release\Classes.csproj.CopyComplete
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Classes\obj\Release\Classes.dll
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Classes\obj\Release\Classes.pdb

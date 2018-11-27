@@ -9,3 +9,9 @@ C:\Users\wayne\Desktop\Github\Project4\CreditCardSite\Utilities\obj\Release\Util
 C:\Users\wayne\Desktop\Github\Project4\CreditCardSite\Utilities\obj\Release\Utilities.csproj.CoreCompileInputs.cache
 C:\Users\wayne\Desktop\Github\Project4\CreditCardSite\Utilities\obj\Release\Utilities.dll
 C:\Users\wayne\Desktop\Github\Project4\CreditCardSite\Utilities\obj\Release\Utilities.pdb
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Utilities\bin\Release\Utilities.dll
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Utilities\bin\Release\Utilities.pdb
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Utilities\obj\Release\Utilities.csprojAssemblyReference.cache
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Utilities\obj\Release\Utilities.csproj.CoreCompileInputs.cache
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Utilities\obj\Release\Utilities.dll
+C:\Users\wayne\Desktop\Github\TermProject3342\TermProject\Utilities\obj\Release\Utilities.pdb
