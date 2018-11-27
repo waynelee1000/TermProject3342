@@ -60,14 +60,18 @@ namespace TermProject
             }
             else
             {
-                if (userCookie.Values["Preference"].ToString() == "automatic")
+                if (userCookie != null)
                 {
-                    login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                    if (userCookie.Values["Preference"].ToString() == "automatic")
+                    {
+                        login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                    }
+                    else if (userCookie.Values["Preference"].ToString() == "assist")
+                    {
+                        login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                    }
                 }
-                else if (userCookie.Values["Preference"].ToString() == "assist")
-                {
-                    login_emailTxt.Text = userCookie.Values["Username"].ToString();
-                }
+
             }
         }
 
