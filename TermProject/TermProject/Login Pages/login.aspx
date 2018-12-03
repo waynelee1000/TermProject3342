@@ -63,6 +63,9 @@
                 <label for="register_stateTxt" >State</label>
                 <asp:TextBox ID="register_stateTxt" runat="server"></asp:TextBox>
 
+                 <label for="register_cityTxt" >City</label>
+                <asp:TextBox ID="register_cityTxt" runat="server"></asp:TextBox>
+
                 <label for="register_securityQ1Txt" >Security Question 1</label>
                 <asp:TextBox ID="register_securityQ1Txt" runat="server"></asp:TextBox>
 

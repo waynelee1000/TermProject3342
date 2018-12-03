@@ -32,7 +32,7 @@ namespace Classes
             }
         }
 
-        public void addUser(string loginID, string password, string name, string phoneNumber, string address, string securityQuestion1,
+        public void addUser(string loginID, string password, string name, string phoneNumber, string address, int zipcode, string city, string state, string securityQuestion1,
             string securityQuestion2, string securityAnswer1, string securityAnswer2)
         {
             SqlCommand sqlAddUser = new SqlCommand();
@@ -49,6 +49,9 @@ namespace Classes
             sqlAddUser.Parameters.Add(new SqlParameter("@SecurityAnswer2", securityAnswer2));
             sqlAddUser.Parameters.Add(new SqlParameter("@LoginPreference", "Default"));
             sqlAddUser.Parameters.Add(new SqlParameter("@Privacy", "Public"));
+            sqlAddUser.Parameters.Add(new SqlParameter("@ZipCode", zipcode));
+            sqlAddUser.Parameters.Add(new SqlParameter("@City", city));
+            sqlAddUser.Parameters.Add(new SqlParameter("@State", state));
 
             db.DoUpdateUsingCmdObj(sqlAddUser);
         }

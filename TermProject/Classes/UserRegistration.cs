@@ -15,7 +15,7 @@ namespace Classes
             string IDExist = storedProcedure.chkUserExist(user.LoginID);
             if (IDExist == "False")
             {
-                storedProcedure.addUser(user.LoginID, user.Password, user.Name, user.PhoneNumber, user.Address,
+                storedProcedure.addUser(user.LoginID, user.Password, user.Name, user.PhoneNumber, user.Address, user.ZipCode, user.City, user.State,
                     user.SecurityQuestion1, user.SecurityQuestion2, user.SecurityAnswer1, user.SecurityAnswer2);
                 return "Account Created";
             }

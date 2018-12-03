@@ -17,15 +17,23 @@ namespace Classes
         {
             DataSet ds = new DataSet();
             ds = storedProcedure.checkLoginInfo(loginID, password);
-
-            if (ds.Tables[0].Rows.Count<1 )
+            try
+            {
+                if (ds.Tables[0].Rows.Count < 1)
+                {
+                    return "Error";
+                }
+                else
+                {
+                    return loginID;
+                }
+            }
+            catch
             {
                 return "Error";
             }
-            else
-            {
-                return loginID;
-            }
+
+
         }
     }
 }

@@ -13,6 +13,9 @@ namespace Classes
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
+        public int ZipCode { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
         public string SecurityQuestion1 { get; set; }
         public string SecurityQuestion2 { get; set; }
         public string SecurityAnswer1 { get; set; }
@@ -22,7 +25,7 @@ namespace Classes
         {
 
         }
-        public User(string loginID, string password, string name, string phoneNumber, string address, string securityQuestion1, 
+        public User(string loginID, string password, string name, string phoneNumber, string address, int zipcode, string city, string state, string securityQuestion1, 
             string securityQuestion2, string securityAnswer1, string securityAnswer2)
         {
             this.LoginID = loginID;
@@ -30,6 +33,9 @@ namespace Classes
             this.Name = name;
             this.PhoneNumber = phoneNumber;
             this.Address = address;
+            this.ZipCode = zipcode;
+            this.City = city;
+            this.State = state;
             this.SecurityQuestion1 = securityQuestion1;
             this.SecurityQuestion2 = securityQuestion2;
             this.SecurityAnswer1 = securityAnswer1;
