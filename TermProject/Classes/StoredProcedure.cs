@@ -9,7 +9,7 @@ using System.Data;
 
 namespace Classes
 {
-    class StoredProcedure
+    public class StoredProcedure
     {
         DBConnect db = new DBConnect();
 
@@ -48,10 +48,14 @@ namespace Classes
             sqlAddUser.Parameters.Add(new SqlParameter("@SecurityAnswer1", securityAnswer1));
             sqlAddUser.Parameters.Add(new SqlParameter("@SecurityAnswer2", securityAnswer2));
             sqlAddUser.Parameters.Add(new SqlParameter("@LoginPreference", "Default"));
-            sqlAddUser.Parameters.Add(new SqlParameter("@Privacy", "Public"));
             sqlAddUser.Parameters.Add(new SqlParameter("@ZipCode", zipcode));
             sqlAddUser.Parameters.Add(new SqlParameter("@City", city));
             sqlAddUser.Parameters.Add(new SqlParameter("@State", state));
+            sqlAddUser.Parameters.Add(new SqlParameter("@ProfilePictureURL", "N/A"));
+            sqlAddUser.Parameters.Add(new SqlParameter("@Organization", "N/A"));
+            sqlAddUser.Parameters.Add(new SqlParameter("@PrivacyProfile", "Public"));
+            sqlAddUser.Parameters.Add(new SqlParameter("@PrivacyPhoto", "Public"));
+            sqlAddUser.Parameters.Add(new SqlParameter("@PrivacyContactInfo", "Public"));
 
             db.DoUpdateUsingCmdObj(sqlAddUser);
         }
@@ -141,6 +145,27 @@ namespace Classes
             catch
             {
                 return securityDS;
+            }
+        }
+        public DataSet FindUsersByLocation(string City, string State)
+        {
+            DataSet myds = new DataSet();
+            try
+            {
+                SqlCommand sqlByLocation = new SqlCommand();
+                sqlByLocation.CommandType = CommandType.StoredProcedure;
+                sqlByLocation.CommandText = "TP_FindUserByLocation";
+                sqlByLocation.Parameters.Add(new SqlParameter("@City", City));
+                sqlByLocation.Parameters.Add(new SqlParameter("@State", State));
+
+
+                myds = db.GetDataSetUsingCmdObj(sqlByLocation);
+
+                return myds;
+            }
+            catch
+            {
+                return myds;
             }
         }
     }

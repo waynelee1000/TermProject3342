@@ -9,6 +9,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Image ID="ProfilePicture" runat="server" Height="140px" Width="120px" />
+        </div>
+        <div>
+            Upload Profile Picture:<asp:FileUpload ID="ProfilePictureUpload" runat="server" />
         </div>
     </form>
 </body>

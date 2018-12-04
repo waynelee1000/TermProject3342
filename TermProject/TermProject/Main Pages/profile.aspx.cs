@@ -11,7 +11,7 @@ namespace TermProject.Main_Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            ProfilePicture.ImageUrl = "../ProfilePictures/person1.jpg";
         }
     }
 }

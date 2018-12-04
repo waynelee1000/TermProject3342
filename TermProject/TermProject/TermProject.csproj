@@ -80,6 +80,7 @@
     <Content Include="Main Pages\newsfeed.aspx" />
     <Content Include="Main Pages\preferences.aspx" />
     <Content Include="Main Pages\profile.aspx" />
+    <Content Include="ProfilePictures\person1.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

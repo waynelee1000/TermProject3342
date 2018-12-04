@@ -20,6 +20,8 @@ namespace Classes
         public string SecurityQuestion2 { get; set; }
         public string SecurityAnswer1 { get; set; }
         public string SecurityAnswer2 { get; set; }
+        public string ProfilePictureURL { get; set; }
+        public string Organization { get; set; }
 
         public User()
         {
