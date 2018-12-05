@@ -11,18 +11,32 @@ using Classes;
 namespace API.Controllers
 {
     [Route("api/[controller]")]
-    public class FindUsers : Controller
+    public class FindUserByLocation : Controller
     {
         DBConnect db = new DBConnect();
         StoredProcedure storedProcedure = new StoredProcedure();
 
-        // GET api/values/5
+        // GET api/FindUsers?City=Philadelphia&State=PA
         [HttpGet]
-        public DataSet FindUserByLocation(string City, string State)
+        public DataSet FindUser(string City, string State)
         {
             DataSet userByLocation = storedProcedure.FindUsersByLocation(City, State);
             return userByLocation;
         }
+    }
 
+
+    [Route("api/[controller]")]
+    public class FindUserByOrg : Controller
+    {
+        DBConnect db = new DBConnect();
+        StoredProcedure storedProcedure = new StoredProcedure();
+
+        [HttpGet]
+        public DataSet FindUser(string Organization)
+        {
+            DataSet userByLocation = storedProcedure.FindUsersByOrg(Organization);
+            return userByLocation;
+        }
     }
 }

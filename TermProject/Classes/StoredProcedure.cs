@@ -168,5 +168,39 @@ namespace Classes
                 return myds;
             }
         }
+
+        public DataSet FindUsersByOrg(string Organization)
+        {
+            DataSet myds = new DataSet();
+            try
+            {
+                SqlCommand sqlByOrg = new SqlCommand();
+                sqlByOrg.CommandType = CommandType.StoredProcedure;
+                sqlByOrg.CommandText = "TP_FindUserByOrg";
+                sqlByOrg.Parameters.Add(new SqlParameter("@Organization", Organization));
+
+
+                myds = db.GetDataSetUsingCmdObj(sqlByOrg);
+
+                return myds;
+            }
+            catch
+            {
+                return myds;
+            }
+        }
+
+        public DataSet GetMyProfile(string loginID, string password)
+        {
+            SqlCommand sqlMyProfile = new SqlCommand();
+            sqlMyProfile.CommandType = CommandType.StoredProcedure;
+            sqlMyProfile.CommandText = "TP_GetMyProfile";
+            sqlMyProfile.Parameters.Add(new SqlParameter("@LoginID", loginID));
+            sqlMyProfile.Parameters.Add(new SqlParameter("@Password", password));
+
+            DataSet mydata = db.GetDataSetUsingCmdObj(sqlMyProfile);
+
+            return mydata;
+        }
     }
 }

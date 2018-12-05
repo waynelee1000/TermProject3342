@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cookies.cs" />
+    <Compile Include="Encrypt.cs" />
     <Compile Include="ForgotLogin.cs" />
     <Compile Include="Friend.cs" />
     <Compile Include="Preference.cs" />

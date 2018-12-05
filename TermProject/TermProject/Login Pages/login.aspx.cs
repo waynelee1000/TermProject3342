@@ -19,17 +19,19 @@ namespace TermProject
         {
             HttpCookie userCookie = Request.Cookies["UserCookie"];
 
+            Encrypt encrypt = new Encrypt();
+
             if (Session["LoginStatus"] != null)
             {
                 if (Session["LoginStatus"].ToString() == "False")
                 {
                     if (userCookie.Values["Preference"].ToString() == "automatic")
                     {
-                        login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                        login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
                         Preference preference = new Preference(login_emailTxt.Text);
 
-                        userCookie.Values["Username"] = login_emailTxt.Text;
-                        userCookie.Values["Password"] = "";
+                        userCookie.Values["Username"] = encrypt.EncryptLogin(login_emailTxt.Text);
+                        userCookie.Values["Password"] = encrypt.EncryptPass("");
                         userCookie.Values["Preference"] = preference.LoginPreference;
                         userCookie.Expires = new DateTime(2025, 1, 1);
                         Response.Cookies.Add(userCookie);
@@ -64,7 +66,7 @@ namespace TermProject
                 {
                     if (userCookie.Values["Preference"].ToString() == "automatic")
                     {
-                        login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                        login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
                     }
                     else if (userCookie.Values["Preference"].ToString() == "assist")
                     {
@@ -76,6 +78,7 @@ namespace TermProject
         }
         protected void login_Btn_Click(object sender, EventArgs e)
         {
+            Encrypt encrypt = new Encrypt();
             UserLogin userLogin = new UserLogin();
             string result = userLogin.loginUser(login_emailTxt.Text, login_passwordTxt.Text);
             if (result != "Error")
@@ -84,8 +87,8 @@ namespace TermProject
 
                 HttpCookie userCookie = new HttpCookie("UserCookie");
 
-                userCookie.Values["Username"] = login_emailTxt.Text;
-                userCookie.Values["Password"] = login_passwordTxt.Text;
+                userCookie.Values["Username"] = encrypt.EncryptLogin(login_emailTxt.Text);
+                userCookie.Values["Password"] = encrypt.EncryptPass(login_passwordTxt.Text);
                 userCookie.Values["Preference"] = preference.LoginPreference;
                 userCookie.Expires = new DateTime(2025, 1, 1);
                 Response.Cookies.Add(userCookie);
