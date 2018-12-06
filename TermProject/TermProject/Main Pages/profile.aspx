@@ -12,7 +12,7 @@
             <asp:Image ID="ProfilePicture" runat="server" Height="140px" Width="120px" />
         </div>
         <div>
-            Upload Profile Picture:<asp:FileUpload ID="ProfilePictureUpload" runat="server" />
+            Upload Profile Picture:<asp:FileUpload ID="ProfilePictureUpload" runat="server"  />
         </div>
         <div>
             <asp:TextBox ID="ProfileName" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditName" runat="server" Text="Edit" />
@@ -33,6 +33,7 @@
         <div>
             Organizations: <asp:TextBox ID="ProfileOrgs" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditOrg" runat="server" Text="Edit" />
         </div>
+        <asp:Button ID="btnConfirmation" runat="server" Text="Update" />
     </form>
 </body>
 </html>
