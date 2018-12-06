@@ -10,18 +10,21 @@ using System.Data;
 using System.Net;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
+using Classes;
 
 namespace TermProject.Main_Pages
 {
     public partial class profile : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+      
         {
+            Encrypt encrypt = new Encrypt();
             ProfilePicture.ImageUrl = "../ProfilePictures/person1.jpg";
 
             HttpCookie userCookie = Request.Cookies["UserCookie"];
 
-            WebRequest request = WebRequest.Create("http://localhost:49241/api/values?" + "creditcardnumber=");
+            WebRequest request = WebRequest.Create("http://localhost:49241/api/MyProfile?" + "loginID="+ encrypt.Decrypt(userCookie.Values["Username"].ToString())+"&Password="+ encrypt.Decrypt(userCookie.Values["Password"].ToString()));
 
             WebResponse response = request.GetResponse();
 
@@ -41,7 +44,8 @@ namespace TermProject.Main_Pages
 
             // Deserialize a JSON string into a Team object.
 
-            DataSet gvData = JsonConvert.DeserializeObject<DataSet>(data);
+            DataSet profileData = JsonConvert.DeserializeObject<DataSet>(data);
+            profileData.Tables[0].Rows[0][0].ToString();
         }
 
     }

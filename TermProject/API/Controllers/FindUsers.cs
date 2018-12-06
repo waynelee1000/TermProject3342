@@ -10,6 +10,7 @@ using Classes;
 
 namespace API.Controllers
 {
+    [Produces("application/json")]
     [Route("api/[controller]")]
     public class FindUserByLocation : Controller
     {
@@ -25,7 +26,7 @@ namespace API.Controllers
         }
     }
 
-
+    [Produces("application/json")]
     [Route("api/[controller]")]
     public class FindUserByOrg : Controller
     {

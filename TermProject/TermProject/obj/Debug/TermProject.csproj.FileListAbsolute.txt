@@ -118,3 +118,6 @@ C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\TermProject\obj\Debug\
 C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\TermProject\obj\Debug\TermProject.csproj.CopyComplete
 C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\TermProject\obj\Debug\TermProject.dll
 C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\TermProject\obj\Debug\TermProject.pdb
+C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\TermProject\bin\Newtonsoft.Json.dll
+C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\TermProject\bin\Newtonsoft.Json.pdb
+C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\TermProject\bin\Newtonsoft.Json.xml
