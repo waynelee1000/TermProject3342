@@ -80,6 +80,7 @@
     <Content Include="Images\fb-word-white.png" />
     <Content Include="Login Pages\login-help.aspx" />
     <Content Include="Login Pages\login.aspx" />
+    <Content Include="Main Pages\messages.aspx" />
     <Content Include="Main Pages\newsfeed.aspx" />
     <Content Include="Main Pages\preferences.aspx" />
     <Content Include="Main Pages\profile.aspx" />
@@ -101,6 +102,13 @@
     </Compile>
     <Compile Include="Login Pages\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main Pages\messages.aspx.cs">
+      <DependentUpon>messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main Pages\messages.aspx.designer.cs">
+      <DependentUpon>messages.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main Pages\newsfeed.aspx.cs">
       <DependentUpon>newsfeed.aspx</DependentUpon>

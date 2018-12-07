@@ -16,11 +16,11 @@ namespace API.Controllers
     {
         DBConnect db = new DBConnect();
         StoredProcedure storedProcedure = new StoredProcedure();
-
+        /*
         [HttpGet]
         public DataSet GetFriends(string requestingID, string requestedID, int friendKey)
         {
             
-        }
+        }*/
     }
 }
