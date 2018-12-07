@@ -90,4 +90,19 @@ namespace API.Controllers
             }
         }
     }
+
+    [Produces("application/json")]
+    [Route("api/[controller]")]
+    public class FindUserByName : Controller
+    {
+        DBConnect db = new DBConnect();
+        StoredProcedure storedProcedure = new StoredProcedure();
+
+        [HttpGet]
+        public DataSet FindUser(string name)
+        {
+            DataSet userByName = storedProcedure.FindUserByName(name);
+            return userByName;
+        }
+    }
 }

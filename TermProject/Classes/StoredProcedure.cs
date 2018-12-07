@@ -221,5 +221,25 @@ namespace Classes
 
             db.DoUpdateUsingCmdObj(sqlUpdateProfile);
         }
+
+        public DataSet FindUserByName(string name)
+        {
+            DataSet myds = new DataSet();
+            try
+            {
+                SqlCommand sqlByName = new SqlCommand();
+                sqlByName.CommandType = CommandType.StoredProcedure;
+                sqlByName.CommandText = "TP_FindUserByName";
+                sqlByName.Parameters.Add(new SqlParameter("@theName", name));
+
+                myds = db.GetDataSetUsingCmdObj(sqlByName);
+
+                return myds;
+            }
+            catch
+            {
+                return myds;
+            }
+        }
     }
 }
