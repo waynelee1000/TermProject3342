@@ -121,3 +121,6 @@ C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\TermProject\obj\Debug\
 C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\TermProject\bin\Newtonsoft.Json.dll
 C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\TermProject\bin\Newtonsoft.Json.pdb
 C:\Users\Wayne\Desktop\github\TermProject3342\TermProject\TermProject\bin\Newtonsoft.Json.xml
+C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\TermProject\bin\Newtonsoft.Json.dll
+C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\TermProject\bin\Newtonsoft.Json.pdb
+C:\Users\Zach\Documents\GitHub\TermProject3342\TermProject\TermProject\bin\Newtonsoft.Json.xml
