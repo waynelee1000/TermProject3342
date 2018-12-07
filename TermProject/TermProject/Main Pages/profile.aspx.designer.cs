@@ -22,31 +22,31 @@ namespace TermProject.Main_Pages {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ProfilePicture control.
+        /// imgProfile control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ProfilePicture;
+        protected global::System.Web.UI.WebControls.Image imgProfile;
         
         /// <summary>
-        /// ProfilePictureUpload control.
+        /// uploadProfilePicture control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload ProfilePictureUpload;
+        protected global::System.Web.UI.WebControls.FileUpload uploadProfilePicture;
         
         /// <summary>
-        /// ProfileName control.
+        /// txtProfileName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProfileName;
+        protected global::System.Web.UI.WebControls.TextBox txtProfileName;
         
         /// <summary>
         /// btnEditName control.
@@ -67,13 +67,13 @@ namespace TermProject.Main_Pages {
         protected global::System.Web.UI.WebControls.Panel PnlContactInfo;
         
         /// <summary>
-        /// ProfileCellPhone control.
+        /// txtProfileCellPhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProfileCellPhone;
+        protected global::System.Web.UI.WebControls.TextBox txtProfileCellPhone;
         
         /// <summary>
         /// btnEditCell control.
@@ -85,13 +85,13 @@ namespace TermProject.Main_Pages {
         protected global::System.Web.UI.WebControls.Button btnEditCell;
         
         /// <summary>
-        /// ProfileAddress control.
+        /// txtProfileAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProfileAddress;
+        protected global::System.Web.UI.WebControls.TextBox txtProfileAddress;
         
         /// <summary>
         /// btnEditAddress control.
@@ -103,13 +103,13 @@ namespace TermProject.Main_Pages {
         protected global::System.Web.UI.WebControls.Button btnEditAddress;
         
         /// <summary>
-        /// ProfileCity control.
+        /// txtProfileCity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProfileCity;
+        protected global::System.Web.UI.WebControls.TextBox txtProfileCity;
         
         /// <summary>
         /// btnEditCity control.
@@ -121,13 +121,13 @@ namespace TermProject.Main_Pages {
         protected global::System.Web.UI.WebControls.Button btnEditCity;
         
         /// <summary>
-        /// ProfileState control.
+        /// txtProfileState control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProfileState;
+        protected global::System.Web.UI.WebControls.TextBox txtProfileState;
         
         /// <summary>
         /// btnEditState control.
@@ -139,13 +139,13 @@ namespace TermProject.Main_Pages {
         protected global::System.Web.UI.WebControls.Button btnEditState;
         
         /// <summary>
-        /// ProfileZipCode control.
+        /// txtProfileZipCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProfileZipCode;
+        protected global::System.Web.UI.WebControls.TextBox txtProfileZipCode;
         
         /// <summary>
         /// btnEditZipCode control.
@@ -157,13 +157,13 @@ namespace TermProject.Main_Pages {
         protected global::System.Web.UI.WebControls.Button btnEditZipCode;
         
         /// <summary>
-        /// ProfileOrgs control.
+        /// txtProfileOrgs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProfileOrgs;
+        protected global::System.Web.UI.WebControls.TextBox txtProfileOrgs;
         
         /// <summary>
         /// btnEditOrg control.

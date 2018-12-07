@@ -16,13 +16,38 @@ namespace API.Controllers
     {
         DBConnect db = new DBConnect();
         StoredProcedure storedProcedure = new StoredProcedure();
+        User user = new User();
 
         // GET api/FindUsers?City=Philadelphia&State=PA
         [HttpGet]
-        public DataSet FindUser(string City, string State)
+        public List<User> FindUser(string City, string State)
         {
             DataSet userByLocation = storedProcedure.FindUsersByLocation(City, State);
-            return userByLocation;
+            try
+            {
+                List<User> userList = new List<User>();
+
+                foreach (DataRow row in userByLocation.Tables[0].Rows)
+                {
+                    string name = row["Name"].ToString();
+                    string address = row["StreetAddress"].ToString();
+                    string city = row["City"].ToString();
+                    string state = row["State"].ToString();
+                    int zipcode = Int32.Parse(row["ZipCode"].ToString());
+                    string org = row["Organization"].ToString();
+                    string profilepic = row["ProfilePictureURL"].ToString();
+                    User user = new User(name, address, city, state, zipcode, org, profilepic);
+
+
+                    userList.Add(user);
+                }
+                return userList;
+            }
+            catch
+            {
+                List<User> userList = new List<User>();
+                return userList;
+            }
         }
     }
 
@@ -32,12 +57,37 @@ namespace API.Controllers
     {
         DBConnect db = new DBConnect();
         StoredProcedure storedProcedure = new StoredProcedure();
+        User user = new User();
 
         [HttpGet]
-        public DataSet FindUser(string Organization)
+        public List<User> FindUser(string Organization)
         {
-            DataSet userByLocation = storedProcedure.FindUsersByOrg(Organization);
-            return userByLocation;
+            DataSet userByOrg = storedProcedure.FindUsersByOrg(Organization);
+            try
+            {
+                List<User> userList = new List<User>();
+
+                foreach (DataRow row in userByOrg.Tables[0].Rows)
+                {
+                    string name = row["Name"].ToString();
+                    string address = row["StreetAddress"].ToString();
+                    string city = row["City"].ToString();
+                    string state = row["State"].ToString();
+                    int zipcode = Int32.Parse(row["ZipCode"].ToString());
+                    string org = row["Organization"].ToString();
+                    string profilepic = row["ProfilePictureURL"].ToString();
+                    User user = new User(name, address, city, state, zipcode, org, profilepic);
+
+                   
+                    userList.Add(user);
+                }
+                return userList;
+            }
+            catch
+            {
+                List<User> userList = new List<User>();
+                return userList;
+            }
         }
     }
 }

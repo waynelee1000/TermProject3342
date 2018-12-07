@@ -83,7 +83,8 @@
     <Content Include="Main Pages\newsfeed.aspx" />
     <Content Include="Main Pages\preferences.aspx" />
     <Content Include="Main Pages\profile.aspx" />
-    <Content Include="ProfilePictures\person1.jpg" />
+    <Content Include="ProfilePictures\defaultImage.jpg" />
+    <Content Include="ProfilePictures\person1_gClooney.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -51,7 +51,7 @@ namespace Classes
             sqlAddUser.Parameters.Add(new SqlParameter("@ZipCode", zipcode));
             sqlAddUser.Parameters.Add(new SqlParameter("@City", city));
             sqlAddUser.Parameters.Add(new SqlParameter("@State", state));
-            sqlAddUser.Parameters.Add(new SqlParameter("@ProfilePictureURL", "N/A"));
+            sqlAddUser.Parameters.Add(new SqlParameter("@ProfilePictureURL", "../ProfilePictures/defaultImage.jpg"));
             sqlAddUser.Parameters.Add(new SqlParameter("@Organization", "N/A"));
             sqlAddUser.Parameters.Add(new SqlParameter("@PrivacyProfile", "Public"));
             sqlAddUser.Parameters.Add(new SqlParameter("@PrivacyPhoto", "Public"));
@@ -201,6 +201,25 @@ namespace Classes
             DataSet mydata = db.GetDataSetUsingCmdObj(sqlMyProfile);
 
             return mydata;
+        }
+
+        public void UpdateMyProfile(string loginid, string password,string name, string phonenumber, string streetaddress, string city, string state, int zipcode, string org, string profilepicture)
+        {
+            SqlCommand sqlUpdateProfile = new SqlCommand();
+            sqlUpdateProfile.CommandType = CommandType.StoredProcedure;
+            sqlUpdateProfile.CommandText = "TP_UpdateProfile";
+            sqlUpdateProfile.Parameters.Add(new SqlParameter("@LoginID", loginid));
+            sqlUpdateProfile.Parameters.Add(new SqlParameter("@Password", password));
+            sqlUpdateProfile.Parameters.Add(new SqlParameter("@Name", name));
+            sqlUpdateProfile.Parameters.Add(new SqlParameter("@PhoneNumber", phonenumber));
+            sqlUpdateProfile.Parameters.Add(new SqlParameter("@StreetAddress", streetaddress));
+            sqlUpdateProfile.Parameters.Add(new SqlParameter("@City", city));
+            sqlUpdateProfile.Parameters.Add(new SqlParameter("@State", state));
+            sqlUpdateProfile.Parameters.Add(new SqlParameter("@ZipCode", zipcode));
+            sqlUpdateProfile.Parameters.Add(new SqlParameter("@Organization", org));
+            sqlUpdateProfile.Parameters.Add(new SqlParameter("@ProfilePictureURL", profilepicture));
+
+            db.DoUpdateUsingCmdObj(sqlUpdateProfile);
         }
     }
 }

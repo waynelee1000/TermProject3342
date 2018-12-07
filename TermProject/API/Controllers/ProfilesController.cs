@@ -17,12 +17,47 @@ namespace API.Controllers
     {
         DBConnect db = new DBConnect();
         StoredProcedure storedProcedure = new StoredProcedure();
+        User user = new User();
 
         [HttpGet]
-        public DataSet MyProfile(string loginID, string Password)
+        public User MyProfile(string loginID, string Password)
         {
             DataSet myProfile = storedProcedure.GetMyProfile(loginID, Password);
-            return myProfile;
+
+            try
+            {
+                string name = myProfile.Tables[0].Rows[0]["Name"].ToString();
+                string number = myProfile.Tables[0].Rows[0]["PhoneNumber"].ToString();
+                string address = myProfile.Tables[0].Rows[0]["StreetAddress"].ToString();
+                string city = myProfile.Tables[0].Rows[0]["City"].ToString();
+                string state = myProfile.Tables[0].Rows[0]["State"].ToString();
+                int zipcode = Int32.Parse(myProfile.Tables[0].Rows[0]["ZipCode"].ToString());
+                string org = myProfile.Tables[0].Rows[0]["Organization"].ToString();
+                string profilepic = myProfile.Tables[0].Rows[0]["ProfilePictureURL"].ToString();
+
+                User user = new User(name, number, address, city, state, zipcode, org, profilepic);
+                return user;
+            }
+            catch
+            {
+                User user = new User();
+                return user;
+            }
+
+        }
+        [HttpPost]
+        public string Post([FromBody] User user)
+        {
+            Encrypt encrypt = new Encrypt();
+            try
+            {
+                storedProcedure.UpdateMyProfile(encrypt.Decrypt(user.LoginID).ToString(), encrypt.Decrypt(user.Password).ToString(), user.Name, user.PhoneNumber, user.Address, user.City, user.State, user.ZipCode, user.Organization, user.ProfilePictureURL);
+                return "Updated Profile";
+            }
+            catch
+            {
+                return "Failed to Update Profile";
+            }
         }
     }
 }

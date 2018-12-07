@@ -9,31 +9,31 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Image ID="ProfilePicture" runat="server" Height="140px" Width="120px" />
+            <asp:Image ID="imgProfile" runat="server" Height="140px" Width="120px" />
         </div>
         <div>
-            Upload Profile Picture:<asp:FileUpload ID="ProfilePictureUpload" runat="server"  />
+            Upload Profile Picture:<asp:FileUpload ID="uploadProfilePicture" runat="server"  />
         </div>
         <div>
-            <asp:TextBox ID="ProfileName" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditName" runat="server" Text="Edit" />
+            <asp:TextBox ID="txtProfileName" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditName" runat="server" Text="Edit" />
         </div>
         <asp:Panel ID="PnlContactInfo" runat="server">
          <div>
-            CellPhone : <asp:TextBox ID="ProfileCellPhone" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditCell" runat="server" Text="Edit" />
+            CellPhone : <asp:TextBox ID="txtProfileCellPhone" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditCell" runat="server" Text="Edit" OnClick="btnEditCell_Click" />
             <br />
-            Address : <asp:TextBox ID="ProfileAddress" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditAddress" runat="server" Text="Edit" />
+            Address : <asp:TextBox ID="txtProfileAddress" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditAddress" runat="server" Text="Edit" OnClick="btnEditAddress_Click" />
             <br />
-            City : <asp:TextBox ID="ProfileCity" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditCity" runat="server" Text="Edit" />
+            City : <asp:TextBox ID="txtProfileCity" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditCity" runat="server" Text="Edit" OnClick="btnEditCity_Click" />
             <br />
-            State : <asp:TextBox ID="ProfileState" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditState" runat="server" Text="Edit" />
+            State : <asp:TextBox ID="txtProfileState" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditState" runat="server" Text="Edit" OnClick="btnEditState_Click" />
             <br />
-            ZipCode : <asp:TextBox ID="ProfileZipCode" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditZipCode" runat="server" Text="Edit" />
+            ZipCode : <asp:TextBox ID="txtProfileZipCode" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditZipCode" runat="server" Text="Edit" OnClick="btnEditZipCode_Click" />
         </div>
         </asp:Panel>
         <div>
-            Organizations: <asp:TextBox ID="ProfileOrgs" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditOrg" runat="server" Text="Edit" />
+            Organizations: <asp:TextBox ID="txtProfileOrgs" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditOrg" runat="server" Text="Edit" OnClick="btnEditOrg_Click" />
         </div>
-        <asp:Button ID="btnConfirmation" runat="server" Text="Update" />
+        <asp:Button ID="btnConfirmation" runat="server" Text="Update" OnClick="btnConfirmation_Click"  />
     </form>
 </body>
 </html>

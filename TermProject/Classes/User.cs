@@ -44,5 +44,26 @@ namespace Classes
             this.SecurityAnswer2 = securityAnswer2;
         }
 
+        public User (string name, string phonenumber, string streetaddress, string city, string state, int zipcode, string organization, string profilepicture)
+        {
+            this.Name = name;
+            this.PhoneNumber = phonenumber;
+            this.Address = streetaddress;
+            this.City = city;
+            this.State = state;
+            this.ZipCode = zipcode;
+            this.Organization = organization;
+            this.ProfilePictureURL = profilepicture;
+        }
+        public User(string name, string streetaddress, string city, string state, int zipcode, string organization, string profilepicture)
+        {
+            this.Name = name;
+            this.Address = streetaddress;
+            this.City = city;
+            this.State = state;
+            this.ZipCode = zipcode;
+            this.Organization = organization;
+            this.ProfilePictureURL = profilepicture;
+        }
     }
 }
