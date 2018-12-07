@@ -81,5 +81,20 @@ namespace TermProject.Main_Pages
 
             Response.Redirect("~/Login Pages/login.aspx");
         }
+
+        protected void prefBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Main Pages/preferences.aspx");
+        }
+
+        protected void messagesBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Main Pages/messages.aspx");
+        }
+
+        protected void profileBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Main Pages/profile.aspx");
+        }
     }
 }
