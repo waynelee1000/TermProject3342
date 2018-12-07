@@ -99,10 +99,33 @@ namespace API.Controllers
         StoredProcedure storedProcedure = new StoredProcedure();
 
         [HttpGet]
-        public DataSet FindUser(string name)
+        public List<User> FindUser(string name)
         {
             DataSet userByName = storedProcedure.FindUserByName(name);
-            return userByName;
+            try
+            {
+                List<User> userList = new List<User>();
+
+                foreach (DataRow row in userByName.Tables[0].Rows)
+                {
+                    string theName = row["Name"].ToString();
+                    string address = row["StreetAddress"].ToString();
+                    string city = row["City"].ToString();
+                    string state = row["State"].ToString();
+                    int zipcode = Int32.Parse(row["ZipCode"].ToString());
+                    string org = row["Organization"].ToString();
+                    string profilepic = row["ProfilePictureURL"].ToString();
+                    User user = new User(theName, address, city, state, zipcode, org, profilepic);
+
+                    userList.Add(user);
+                }
+                return userList;
+            }
+            catch
+            {
+                List<User> userList = new List<User>();
+                return userList;
+            }
         }
     }
 }
