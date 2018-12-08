@@ -14,5 +14,10 @@ namespace Classes
         {
             storedProcedure.updateLoginPreference(loginID, loginPreference);
         }
+
+        public void UpdatePrivacyPref(string LoginID, string PhotosPref, string ProfilePref, string ContactPref)
+        {
+            storedProcedure.UpdatePrivacy(LoginID, PhotosPref, ProfilePref, ContactPref);
+        }
     }
 }

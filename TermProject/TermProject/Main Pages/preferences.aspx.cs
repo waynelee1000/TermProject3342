@@ -54,6 +54,9 @@ namespace TermProject.Main_Pages
             userCookie.Values["Username"] = userCookie.Values["Username"].ToString();
             userCookie.Values["Password"] = userCookie.Values["Password"].ToString();
             userCookie.Values["Preference"] = newLoginPref;
+            userCookie.Values["PhotosPref"] = userCookie.Values["PhotosPref"].ToString();
+            userCookie.Values["ProfilePref"] = userCookie.Values["ProfilePref"].ToString();
+            userCookie.Values["ContactPref"] = userCookie.Values["ContactPref"].ToString();
             userCookie.Expires = new DateTime(2025, 1, 1);
             Response.Cookies.Add(userCookie);
             
@@ -62,17 +65,24 @@ namespace TermProject.Main_Pages
 
         protected void btn_PrivacyPref_Click(object sender, EventArgs e)
         {
+            HttpCookie userCookie = Request.Cookies["UserCookie"];
+            Encrypt encrypt = new Encrypt();
+
             string newPhotosPref = photosDDL.SelectedValue.ToString();
             string newProfilePref = profileDDL.SelectedValue.ToString();
             string newContactPref = contactDDL.SelectedValue.ToString();
 
-            HttpCookie userCookie = Request.Cookies["UserCookie"];
+            updatePreference.UpdatePrivacyPref(encrypt.Decrypt(userCookie.Values["Username"].ToString()), newPhotosPref, newProfilePref, newContactPref);
 
             userCookie.Values["Username"] = userCookie.Values["Username"].ToString();
             userCookie.Values["Password"] = userCookie.Values["Password"].ToString();
+            userCookie.Values["Preference"] = userCookie.Values["Preference"].ToString();
             userCookie.Values["PhotosPref"] = newPhotosPref;
             userCookie.Values["ProfilePref"] = newProfilePref;
             userCookie.Values["ContactPref"] = newContactPref;
+
+            userCookie.Expires = new DateTime(2025, 1, 1);
+            Response.Cookies.Add(userCookie);
         }
 
         protected void logoutBtn_Click(object sender, EventArgs e)

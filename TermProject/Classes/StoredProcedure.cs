@@ -241,5 +241,18 @@ namespace Classes
                 return myds;
             }
         }
+
+        public void UpdatePrivacy(string LoginID, string PhotosPref, string  ProfilePref, string ContactPref)
+        {
+            SqlCommand sqlUpdatePrivacy = new SqlCommand();
+            sqlUpdatePrivacy.CommandType = CommandType.StoredProcedure;
+            sqlUpdatePrivacy.CommandText = "TP_UpdateProfile";
+            sqlUpdatePrivacy.Parameters.Add(new SqlParameter("@LoginID", LoginID));
+            sqlUpdatePrivacy.Parameters.Add(new SqlParameter("@PrivacyProfile", ProfilePref));
+            sqlUpdatePrivacy.Parameters.Add(new SqlParameter("@PrivacyPhoto", PhotosPref));
+            sqlUpdatePrivacy.Parameters.Add(new SqlParameter("@PrivacyContactInfo", ContactPref));
+
+            db.DoUpdateUsingCmdObj(sqlUpdatePrivacy);
+        }
     }
 }

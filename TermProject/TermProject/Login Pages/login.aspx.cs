@@ -31,7 +31,7 @@ namespace TermProject
                         Preference preference = new Preference(login_emailTxt.Text);
 
                         userCookie.Values["Username"] = encrypt.EncryptLogin(login_emailTxt.Text);
-                        userCookie.Values["Password"] = encrypt.EncryptPass("");
+                        userCookie.Values["Password"] = userCookie.Values["Password"].ToString();
                         userCookie.Values["Preference"] = preference.LoginPreference;
                         userCookie.Expires = new DateTime(2025, 1, 1);
                         Response.Cookies.Add(userCookie);
@@ -67,6 +67,11 @@ namespace TermProject
                     if (userCookie.Values["Preference"].ToString() == "automatic")
                     {
                         login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
+                        login_passwordTxt.Text = encrypt.Decrypt(userCookie.Values["Password"].ToString());
+
+                        Session["LoginStatus"] = "True";
+
+                        Response.Redirect(url: "~/Main Pages/newsfeed.aspx");
                     }
                     else if (userCookie.Values["Preference"].ToString() == "assist")
                     {
@@ -90,6 +95,9 @@ namespace TermProject
                 userCookie.Values["Username"] = encrypt.EncryptLogin(login_emailTxt.Text);
                 userCookie.Values["Password"] = encrypt.EncryptPass(login_passwordTxt.Text);
                 userCookie.Values["Preference"] = preference.LoginPreference;
+                userCookie.Values["PrivacyProfile"] = preference.PrivacyProfile;
+                userCookie.Values["PrivacyPhoto"] = preference.PrivacyPhoto;
+                userCookie.Values["PrivacyContactInfo"] = preference.PrivacyContactInfo;
                 userCookie.Expires = new DateTime(2025, 1, 1);
                 Response.Cookies.Add(userCookie);
                 Session["LoginStatus"] = "True";

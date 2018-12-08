@@ -193,6 +193,18 @@ namespace TermProject.Main_Pages
             }
 
         }
+        protected void btnEditName_Click(object sender, EventArgs e)
+        {
+            if (txtProfileName.ReadOnly == true)
+            {
+                txtProfileName.ReadOnly = false;
+            }
+            else
+            {
+                txtProfileName.ReadOnly = true;
+            }
+
+        }
 
         protected void logoutBtn_Click(object sender, EventArgs e)
         {
@@ -214,6 +226,34 @@ namespace TermProject.Main_Pages
         protected void profileBtn_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Main Pages/profile.aspx");
+        }
+
+        protected void btnEditMode_Click(object sender, EventArgs e)
+        {
+            if (uploadProfilePicture.Visible == false)
+            {
+                uploadProfilePicture.Visible = true;
+                btnEditName.Visible = true;
+                btnEditCell.Visible = true;
+                btnEditAddress.Visible = true;
+                btnEditCity.Visible = true;
+                btnEditState.Visible = true;
+                btnEditZipCode.Visible = true;
+                btnEditOrg.Visible = true;
+                btnConfirmation.Visible = true;
+            }
+            else
+            {
+                uploadProfilePicture.Visible = false;
+                btnEditName.Visible = false;
+                btnEditCell.Visible = false;
+                btnEditAddress.Visible = false;
+                btnEditCity.Visible = false;
+                btnEditState.Visible = false;
+                btnEditZipCode.Visible = false;
+                btnEditOrg.Visible = false;
+                btnConfirmation.Visible = false;
+            }
         }
 
     }

@@ -67,6 +67,15 @@ namespace TermProject.Main_Pages {
         protected global::System.Web.UI.WebControls.Image imgProfile;
         
         /// <summary>
+        /// btnEditMode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEditMode;
+        
+        /// <summary>
         /// uploadProfilePicture control.
         /// </summary>
         /// <remarks>
@@ -218,5 +227,23 @@ namespace TermProject.Main_Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnConfirmation;
+        
+        /// <summary>
+        /// UpdatePanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        
+        /// <summary>
+        /// lblUserWall control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUserWall;
     }
 }
