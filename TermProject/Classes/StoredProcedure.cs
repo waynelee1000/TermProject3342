@@ -275,7 +275,22 @@ namespace Classes
                 }
             }
                 return 0;
-            }
         }
+
+        public DataSet getPhotos(string LoginID)
+        {
+            SqlCommand sqlGetPhotos = new SqlCommand();
+            sqlGetPhotos.CommandType = CommandType.StoredProcedure;
+            sqlGetPhotos.CommandText = "TP_GetPhotos";
+            sqlGetPhotos.Parameters.Add(new SqlParameter("LoginID", LoginID));
+
+            DataSet photosDS = new DataSet();
+            photosDS = db.GetDataSetUsingCmdObj(sqlGetPhotos);
+            return photosDS;
+        }
+
+        }
+
+        
     }
 

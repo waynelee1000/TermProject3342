@@ -17,9 +17,12 @@ namespace API.Controllers
         StoredProcedure storedProcedure = new StoredProcedure();
 
         [HttpGet]
-        public List<String> GetPhotos(string LoginID)
+        public List<Photos> GetPhotos(string LoginID)
         {
+            Photos userPhotos = new Photos();
+            List<Photos> photoList = userPhotos.GetUserPhotos(LoginID);
 
+            return photoList;
         }
     }
 }
