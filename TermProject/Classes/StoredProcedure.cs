@@ -254,5 +254,43 @@ namespace Classes
 
             db.DoUpdateUsingCmdObj(sqlUpdatePrivacy);
         }
+
+        public int checkFriendStatus(string LoginID, string FriendID)
+        {
+            SqlCommand sqlCheckFriend = new SqlCommand();
+            sqlCheckFriend.CommandType = CommandType.StoredProcedure;
+            sqlCheckFriend.CommandText = "TP_CheckFriend";
+            sqlCheckFriend.Parameters.Add(new SqlParameter("loginID", LoginID));
+            sqlCheckFriend.Parameters.Add(new SqlParameter("friendID", FriendID));
+
+            DataSet friendDS = new DataSet();
+            friendDS = db.GetDataSetUsingCmdObj(sqlCheckFriend);
+
+            if (friendDS.Tables[0].Rows.Count == 1)
+            {
+                foreach (DataRow row in friendDS.Tables[0].Rows)
+                {
+                    int friendKey = Int32.Parse(row["FriendKey"].ToString());
+                    return friendKey;
+                }
+            }
+                return 0;
+        }
+
+        public DataSet getPhotos(string LoginID)
+        {
+            SqlCommand sqlGetPhotos = new SqlCommand();
+            sqlGetPhotos.CommandType = CommandType.StoredProcedure;
+            sqlGetPhotos.CommandText = "TP_GetPhotos";
+            sqlGetPhotos.Parameters.Add(new SqlParameter("LoginID", LoginID));
+
+            DataSet photosDS = new DataSet();
+            photosDS = db.GetDataSetUsingCmdObj(sqlGetPhotos);
+            return photosDS;
+        }
+
+        }
+
+        
     }
-}
+
