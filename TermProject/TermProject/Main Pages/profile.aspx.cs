@@ -19,6 +19,7 @@ namespace TermProject.Main_Pages
         protected void Page_PreInit(object sender, EventArgs e)
         {
             Theme = "Blue";
+
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -255,6 +256,20 @@ namespace TermProject.Main_Pages
                 btnConfirmation.Visible = false;
             }
         }
+        protected void Timer1_Tick(object sender, EventArgs e)
+        {
+            UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
+            Label label = new Label();
+            label.ID = "btn" + 1;
+            label.Text = "hello";
+            UpdatePanel1.ContentTemplateContainer.Controls.Add(label);
+            Label label2 = new Label();
+            label2.ID = "btn" + 1;
+            label2.Text = "hello2";
+            UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
+            UpdatePanel1.ContentTemplateContainer.Controls.Add(label2);
+        }
 
     }
+
 }
