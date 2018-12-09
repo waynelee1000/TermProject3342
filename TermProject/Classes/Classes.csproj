@@ -50,6 +50,7 @@
     <Compile Include="User.cs" />
     <Compile Include="UserLogin.cs" />
     <Compile Include="UserRegistration.cs" />
+    <Compile Include="WallPost.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utilities\Utilities.csproj">

@@ -8,6 +8,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <header>
             <a href="newsfeed.aspx">
                 <img src="../Images/fb-white-logo.png" class="logo"/>
@@ -50,9 +51,16 @@
 
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                <asp:Label ID="lblUserWall" runat="server" Text="Profile Wall"></asp:Label>
+                Profile Wall
+                <br />
+                <asp:TextBox ID="txtPostWall" runat="server" Width="805px"></asp:TextBox><asp:Button ID="btnPost" runat="server" Text="Post" />
+                <br />
             </ContentTemplate>
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
+            </Triggers>
         </asp:UpdatePanel>
+        <asp:Timer ID="Timer1" runat="server" Interval="5000" OnTick="Timer1_Tick"></asp:Timer>
 
     </form>
 </body>
