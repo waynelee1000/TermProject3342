@@ -36,9 +36,6 @@ namespace TermProject.Main_Pages
             {
                 Response.Redirect("~/Login Pages/login.aspx");
             }
-            NavButtons nav = (NavButtons)LoadControl("NavButtons.ascx");
-            headerButtons.Controls.Add(nav);
-
             HttpCookie userCookie = Request.Cookies["UserCookie"];
             string prefereceString = userCookie.Values["Preference"].ToString();
             lbl_CurrentLoginPref.Text = prefereceString;
@@ -91,6 +88,28 @@ namespace TermProject.Main_Pages
 
             userCookie.Expires = new DateTime(2025, 1, 1);
             Response.Cookies.Add(userCookie);
+        }
+
+        protected void logoutBtn_Click(object sender, EventArgs e)
+        {
+            Session["LoginStatus"] = "False";
+
+            Response.Redirect("~/Login Pages/login.aspx");
+        }
+
+        protected void prefBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Main Pages/preferences.aspx");
+        }
+
+        protected void messagesBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Main Pages/messages.aspx");
+        }
+
+        protected void profileBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Main Pages/profile.aspx");
         }
     }
 }

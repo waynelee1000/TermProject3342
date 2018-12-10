@@ -13,39 +13,39 @@ namespace TermProject.Main_Pages {
     public partial class newsfeed {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// logoutBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Button logoutBtn;
         
         /// <summary>
-        /// headerButtons control.
+        /// prefBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl headerButtons;
+        protected global::System.Web.UI.WebControls.Button prefBtn;
         
         /// <summary>
-        /// UpdatePanel1 control.
+        /// messagesBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+        protected global::System.Web.UI.WebControls.Button messagesBtn;
         
         /// <summary>
-        /// Timer1 control.
+        /// profileBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.Timer Timer1;
+        protected global::System.Web.UI.WebControls.Button profileBtn;
     }
 }

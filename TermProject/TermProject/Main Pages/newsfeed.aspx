@@ -8,29 +8,17 @@
 </head>
 <body>
     <form runat="server">
-        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <header>
             <a href="newsfeed.aspx">
                 <img src="../Images/logo.png" class="logo"/>
             </a>
-            <div id="headerButtons" runat="server" style="float:right;">
-
+            <div id="headerButtons" style="float:right;">
+                <asp:Button class="headerBtn" ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />
+                <asp:Button class="headerBtn" ID="prefBtn" runat="server" Text="Settings" OnClick="prefBtn_Click"/>
+                <asp:Button class="headerBtn" ID="messagesBtn" runat="server" Text="Messages" OnClick="messagesBtn_Click" />
+                <asp:Button class="headerBtn" ID="profileBtn" runat="server" Text="My Profile" OnClick="profileBtn_Click" />
             </div>
         </header>
-        <div>
-            <asp:UpdatePanel ID="UpdatePanel1" runat="server" ChildrenAsTriggers="False" UpdateMode="Conditional">
-            <ContentTemplate>
-                <br />
-            </ContentTemplate>
-            <Triggers>
-                <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
-            </Triggers>
-        </asp:UpdatePanel>
-
-        <asp:Timer ID="Timer1" runat="server" Interval="5000" OnTick="Timer1_Tick"></asp:Timer>
-
-        </div>
-
     </form>
 </body>
 </html>

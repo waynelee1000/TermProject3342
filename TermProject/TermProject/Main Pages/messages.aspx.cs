@@ -43,9 +43,27 @@ namespace TermProject.Main_Pages
             newThreadDDL.DataSource = myFriends;
             newThreadDDL.DataBind();
 
-            NavButtons nav = (NavButtons)LoadControl("NavButtons.ascx");
-            headerButtons.Controls.Add(nav);
+        }
+        protected void logoutBtn_Click(object sender, EventArgs e)
+        {
+            Session["LoginStatus"] = "False";
 
+            Response.Redirect("~/Login Pages/login.aspx");
+        }
+
+        protected void prefBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Main Pages/preferences.aspx");
+        }
+
+        protected void messagesBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Main Pages/messages.aspx");
+        }
+
+        protected void profileBtn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Main Pages/profile.aspx");
         }
 
         protected void newThreadBtn_Click(object sender, EventArgs e)
