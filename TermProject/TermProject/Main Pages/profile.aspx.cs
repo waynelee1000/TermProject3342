@@ -19,11 +19,10 @@ namespace TermProject.Main_Pages
         protected void Page_PreInit(object sender, EventArgs e)
         {
             Theme = "Blue";
-
         }
 
         protected void Page_Load(object sender, EventArgs e)
-      
+
         {
             if (!IsPostBack)
             {
@@ -65,6 +64,9 @@ namespace TermProject.Main_Pages
 
                 loadPosts();
             }
+
+            NavButtons nav = (NavButtons)LoadControl("NavButtons.ascx");
+            headerButtons.Controls.Add(nav);
         }
 
         protected void btnConfirmation_Click(object sender, EventArgs e)
@@ -77,10 +79,10 @@ namespace TermProject.Main_Pages
             if (uploadProfilePicture.HasFile)
             {
                 //create the path to save the file to
-                string fileName = Path.Combine(Server.MapPath("~/ProfilePictures"), encrypt.Decrypt(userCookie.Values["Username"].ToString())+"_"+uploadProfilePicture.FileName);
+                string fileName = Path.Combine(Server.MapPath("~/ProfilePictures"), encrypt.Decrypt(userCookie.Values["Username"].ToString()) + "_" + uploadProfilePicture.FileName);
                 //save the file to our local path
                 uploadProfilePicture.SaveAs(fileName);
-                imgProfile.ImageUrl = "../ProfilePictures/"+encrypt.Decrypt(userCookie.Values["Username"].ToString())+"_"+uploadProfilePicture.FileName;
+                imgProfile.ImageUrl = "../ProfilePictures/" + encrypt.Decrypt(userCookie.Values["Username"].ToString()) + "_" + uploadProfilePicture.FileName;
 
 
             }
@@ -111,8 +113,6 @@ namespace TermProject.Main_Pages
             Stream theDataStream = response.GetResponseStream();
             StreamReader reader = new StreamReader(theDataStream);
 
-            loadPosts();
-
             string data = reader.ReadToEnd();
 
             reader.Close();
@@ -132,7 +132,7 @@ namespace TermProject.Main_Pages
                 txtProfileAddress.ReadOnly = true;
             }
         }
-        protected void btnEditCell_Click (object sender, EventArgs e)
+        protected void btnEditCell_Click(object sender, EventArgs e)
         {
 
             if (txtProfileCellPhone.ReadOnly == true)
@@ -207,28 +207,6 @@ namespace TermProject.Main_Pages
 
         }
 
-        protected void logoutBtn_Click(object sender, EventArgs e)
-        {
-            Session["LoginStatus"] = "False";
-
-            Response.Redirect("~/Login Pages/login.aspx");
-        }
-
-        protected void prefBtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Main Pages/preferences.aspx");
-        }
-
-        protected void messagesBtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Main Pages/messages.aspx");
-        }
-
-        protected void profileBtn_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Main Pages/profile.aspx");
-        }
-
         protected void btnEditMode_Click(object sender, EventArgs e)
         {
             if (uploadProfilePicture.Visible == false)
@@ -290,25 +268,6 @@ namespace TermProject.Main_Pages
 
             reader.Close();
             response.Close();
-
-            UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
-            Label label = new Label();
-            label.Text = txtPostWall.Text;
-            UpdatePanel1.ContentTemplateContainer.Controls.Add(label);
-
-            Label label2 = new Label();
-            label2.Text = "Comments";
-            UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
-            UpdatePanel1.ContentTemplateContainer.Controls.Add(label2);
-
-            TextBox textbox = new TextBox();
-            textbox.ID = "textBox";
-            UpdatePanel1.ContentTemplateContainer.Controls.Add(textbox);
-            Button buttonComment = new Button();
-            buttonComment.Text = "Post Comment";
-            buttonComment.Click += buttonComment_Click;
-            UpdatePanel1.ContentTemplateContainer.Controls.Add(buttonComment);
-            UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<iframe src='https://stackoverflow.com/questions/2872741/dynamically-add-iframe-to-a-page'></iframe>"));
             loadPosts();
         }
         public void loadPosts()
@@ -353,27 +312,10 @@ namespace TermProject.Main_Pages
                 UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
                 UpdatePanel1.ContentTemplateContainer.Controls.Add(label2);
 
-                TextBox textbox = new TextBox();
-                textbox.TextChanged += new System.EventHandler(this.textbox_Changed);
-                UpdatePanel1.ContentTemplateContainer.Controls.Add(textbox);
-
-                Button buttonComment = new Button();
-                buttonComment.Text = "Post Comment";
-                buttonComment.Click += buttonComment_Click;
-                UpdatePanel1.ContentTemplateContainer.Controls.Add(buttonComment);
+                PostComments postComments = (PostComments)LoadControl("PostComments.ascx");
+                UpdatePanel1.ContentTemplateContainer.Controls.Add(postComments);
                 UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
             }
-        }
-
-        private void buttonComment_Click(object sender, EventArgs e)
-        {
-            UpdatePanel1.ChildrenAsTriggers = true;
-            loadPosts();
-        }
-
-        private void textbox_Changed(object sender, EventArgs e)
-        {
-            UpdatePanel1.ChildrenAsTriggers = false;
         }
 
     }

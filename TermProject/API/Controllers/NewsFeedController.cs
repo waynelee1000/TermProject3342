@@ -73,4 +73,74 @@ namespace API.Controllers
             return newsFeedsList;
         }
     }
+    [Produces("application/json")]
+    [Route("api/GetAllNewsFeed")]
+    public class GetAllNewsFeedController : Controller
+    {
+        DBConnect db = new DBConnect();
+        StoredProcedure storedProcedure = new StoredProcedure();
+        Encrypt encrypt = new Encrypt();
+
+        [HttpGet]
+        public List<NewsFeed> GetAllNewsFeed(string loginID, string Password)
+        {
+            List<NewsFeed> newsFeedsList = new List<NewsFeed>();
+            Friend friend = new Friend();
+            friend.Friendlist(loginID);
+            DataSet personalFeed = new DataSet();
+            DataSet allfeed = new DataSet();
+            personalFeed = storedProcedure.GetNewsFeed(loginID);
+
+            foreach (Friend x in friend.Friendlist(loginID))
+            {
+                allfeed = storedProcedure.GetNewsFeed(x.FriendLoginID.ToString());
+
+
+                string oldkey2 = "-1";
+                foreach (DataRow rows in allfeed.Tables[0].Rows)
+                {
+                    if (oldkey2 == "-1")
+                    {
+                        NewsFeed newsFeed = new NewsFeed();
+                        newsFeed.LoginID = rows["LoginID"].ToString();
+                        newsFeed.NewsFeedMessage = rows["NewsFeed"].ToString();
+                        newsFeedsList.Add(newsFeed);
+                    }
+                    else if (oldkey2 != rows["NewsFeedID"].ToString())
+                    {
+                        NewsFeed newsFeed = new NewsFeed();
+                        newsFeed.LoginID = rows["LoginID"].ToString();
+                        newsFeed.NewsFeedMessage = rows["NewsFeed"].ToString();
+                        newsFeedsList.Add(newsFeed);
+                    }
+                    oldkey2 = rows["NewsFeedID"].ToString();
+
+                }
+            }
+
+            string oldkey = "-1";
+            foreach (DataRow rows in personalFeed.Tables[0].Rows)
+            {
+                if (oldkey == "-1")
+                {
+                    NewsFeed newsFeed = new NewsFeed();
+                    newsFeed.LoginID = rows["LoginID"].ToString();
+                    newsFeed.NewsFeedMessage = rows["NewsFeed"].ToString();
+                    newsFeedsList.Add(newsFeed);
+                }
+                else if (oldkey != rows["NewsFeedID"].ToString())
+                {
+                    NewsFeed newsFeed = new NewsFeed();
+                    newsFeed.LoginID = rows["LoginID"].ToString();
+                    newsFeed.NewsFeedMessage = rows["NewsFeed"].ToString();
+                    newsFeedsList.Add(newsFeed);
+                }
+                oldkey = rows["NewsFeedID"].ToString();
+
+            }
+
+            return newsFeedsList;
+        }
+
+    }
 }
