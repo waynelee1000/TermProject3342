@@ -50,7 +50,7 @@ namespace TermProject.Main_Pages
 
                 response.Close();
 
-                // Deserialize a JSON string into a Team object.
+                // Deserialize a JSON string
 
                 User profileData = JsonConvert.DeserializeObject<User>(data);
 

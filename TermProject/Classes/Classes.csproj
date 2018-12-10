@@ -43,6 +43,7 @@
     <Compile Include="Encrypt.cs" />
     <Compile Include="ForgotLogin.cs" />
     <Compile Include="Friend.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="NewsFeed.cs" />
     <Compile Include="Photos.cs" />
     <Compile Include="Preference.cs" />
