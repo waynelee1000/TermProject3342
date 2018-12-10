@@ -92,8 +92,8 @@ namespace TermProject.Main_Pages
                 UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
                 Label owner = new Label();
 
-                owner.Text = x.Name;
-                UpdatePanel1.ContentTemplateContainer.Controls.Add(owner);
+                owner.Text = x.L;
+                UpdatePanel1.ContentTemplateContainer.Controls.Add(label);
 
                 UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
                 Label label = new Label();
