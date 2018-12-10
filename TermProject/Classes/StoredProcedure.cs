@@ -288,9 +288,33 @@ namespace Classes
             photosDS = db.GetDataSetUsingCmdObj(sqlGetPhotos);
             return photosDS;
         }
+        public void AddNewsFeed(string LoginID, string NewsFeed)
+        {
+
+            SqlCommand sqlAddNewsFeed = new SqlCommand();
+            sqlAddNewsFeed.CommandType = CommandType.StoredProcedure;
+            sqlAddNewsFeed.CommandText = "TP_AddNewsFeed";
+            sqlAddNewsFeed.Parameters.Add(new SqlParameter("@LoginID", LoginID));
+            sqlAddNewsFeed.Parameters.Add(new SqlParameter("@NewsFeed", NewsFeed));
+
+
+            db.DoUpdateUsingCmdObj(sqlAddNewsFeed);
 
         }
 
-        
+        public DataSet GetNewsFeed(string LoginID)
+        {
+            SqlCommand sqlGetNewsFeed = new SqlCommand();
+            sqlGetNewsFeed.CommandType = CommandType.StoredProcedure;
+            sqlGetNewsFeed.CommandText = "TP_GetPersonalNewsFeed";
+            sqlGetNewsFeed.Parameters.Add(new SqlParameter("@LoginID", LoginID));
+            DataSet newsData = new DataSet();
+            newsData = db.GetDataSetUsingCmdObj(sqlGetNewsFeed);
+
+            return newsData;
+
+        }
+
     }
 
+}

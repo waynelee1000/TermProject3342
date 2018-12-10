@@ -49,11 +49,13 @@
         </div>
         <asp:Button ID="btnConfirmation" runat="server" Text="Update" OnClick="btnConfirmation_Click" Visible ="false" />
 
+        <br />
+            Profile Wall
+            <br />
+            <asp:TextBox ID="txtPostWall" runat="server" Width="805px"></asp:TextBox><asp:Button ID="btnPost" runat="server" Text="Post" OnClick="btnPost_Click" />
+
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
-                Profile Wall
-                <br />
-                <asp:TextBox ID="txtPostWall" runat="server" Width="805px"></asp:TextBox><asp:Button ID="btnPost" runat="server" Text="Post" />
                 <br />
             </ContentTemplate>
             <Triggers>
@@ -65,3 +67,4 @@
     </form>
 </body>
 </html>
+

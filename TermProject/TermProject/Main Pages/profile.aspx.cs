@@ -258,18 +258,93 @@ namespace TermProject.Main_Pages
         }
         protected void Timer1_Tick(object sender, EventArgs e)
         {
-            UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
-            Label label = new Label();
-            label.ID = "btn" + 1;
-            label.Text = "hello";
-            UpdatePanel1.ContentTemplateContainer.Controls.Add(label);
-            Label label2 = new Label();
-            label2.ID = "btn" + 1;
-            label2.Text = "hello2";
-            UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
-            UpdatePanel1.ContentTemplateContainer.Controls.Add(label2);
+            loadPosts();
         }
 
+        protected void btnPost_Click(object sender, EventArgs e)
+        {
+            Encrypt encrypt = new Encrypt();
+            HttpCookie userCookie = Request.Cookies["UserCookie"];
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            NewsFeed newsFeed = new NewsFeed(encrypt.Decrypt(userCookie.Values["Username"].ToString()), txtPostWall.Text);
+
+            string jsonNews = js.Serialize(newsFeed);
+
+            WebRequest request = WebRequest.Create("http://localhost:49241/api/NewsFeed?");
+            request.Method = "POST";
+            request.ContentType = "application/json";
+
+            StreamWriter writer = new StreamWriter(request.GetRequestStream());
+
+            writer.Write(jsonNews);
+            writer.Flush();
+            writer.Close();
+
+            WebResponse response = request.GetResponse();
+            Stream theDataStream = response.GetResponseStream();
+            StreamReader reader = new StreamReader(theDataStream);
+
+
+
+            string data = reader.ReadToEnd();
+
+            reader.Close();
+            response.Close();
+
+            UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
+            Label label = new Label();
+            label.ID = "test";
+            label.Text = txtPostWall.Text;
+            UpdatePanel1.ContentTemplateContainer.Controls.Add(label);
+            Label label2 = new Label();
+            label2.ID = "test2";
+            label2.Text = "Comments";
+            UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
+            UpdatePanel1.ContentTemplateContainer.Controls.Add(label2);
+            TextBox textbox = new TextBox();
+            textbox.ID = "textBox";
+            UpdatePanel1.ContentTemplateContainer.Controls.Add(textbox);
+            Button buttonComment = new Button();
+            buttonComment.ID = "btnComment";
+            buttonComment.Text = "Post Comment";
+            UpdatePanel1.ContentTemplateContainer.Controls.Add(buttonComment);
+        }
+        public void loadPosts()
+        {
+            Encrypt encrypt = new Encrypt();
+            List<NewsFeed> newsFeedList = new List<NewsFeed>();
+            NewsFeed newsFeed = new NewsFeed();
+            HttpCookie userCookie = Request.Cookies["UserCookie"];
+
+            WebRequest request = WebRequest.Create("http://localhost:49241/api/GetPersonalFeed?" + "loginID=" + encrypt.Decrypt(userCookie.Values["Username"].ToString()) + "&Password=" + encrypt.Decrypt((userCookie.Values["Password"].ToString())));
+
+            WebResponse response = request.GetResponse();
+
+
+            // Read the data from the Web Response, which requires working with streams.
+
+            Stream theDataStream = response.GetResponseStream();
+
+            StreamReader reader = new StreamReader(theDataStream);
+
+            string data = reader.ReadToEnd();
+
+            reader.Close();
+
+            response.Close();
+
+            // Deserialize a JSON string into a Team object.
+
+            newsFeedList = JsonConvert.DeserializeObject<List<NewsFeed>>(data);
+
+            foreach (NewsFeed x in newsFeedList)
+            {
+                Label label = new Label();
+                label.Text = x.NewsFeedMessage;
+                UpdatePanel1.ContentTemplateContainer.Controls.Add(label);
+                UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
+            }
+        }
     }
 
 }

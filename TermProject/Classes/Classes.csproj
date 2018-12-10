@@ -43,6 +43,7 @@
     <Compile Include="Encrypt.cs" />
     <Compile Include="ForgotLogin.cs" />
     <Compile Include="Friend.cs" />
+    <Compile Include="NewsFeed.cs" />
     <Compile Include="Photos.cs" />
     <Compile Include="Preference.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,7 +52,6 @@
     <Compile Include="User.cs" />
     <Compile Include="UserLogin.cs" />
     <Compile Include="UserRegistration.cs" />
-    <Compile Include="WallPost.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
