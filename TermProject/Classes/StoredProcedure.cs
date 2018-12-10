@@ -362,6 +362,18 @@ namespace Classes
             return name;  
         }
 
+        public DataSet GetMessages(string threadID)
+        {
+            SqlCommand sqlGetMessages = new SqlCommand();
+            sqlGetMessages.CommandType = CommandType.StoredProcedure;
+            sqlGetMessages.CommandText = "TP_GetMessages";
+            sqlGetMessages.Parameters.Add(new SqlParameter("@ThreadID", threadID));
+
+            DataSet messagesDS = new DataSet();
+            messagesDS = db.GetDataSetUsingCmdObj(sqlGetMessages);
+            return messagesDS;
+        }
+
     }
 
 }
