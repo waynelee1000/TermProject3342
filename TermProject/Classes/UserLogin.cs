@@ -35,6 +35,12 @@ namespace Classes
 
 
         }
+
+        public string GetName(string loginID)
+        {
+            string name = storedProcedure.GetName(loginID);
+            return name;
+        }
     }
 }
 

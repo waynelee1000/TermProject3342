@@ -94,13 +94,14 @@ namespace TermProject
                 Preference preference = new Preference(login_emailTxt.Text);
 
                 HttpCookie userCookie = new HttpCookie("UserCookie");
-
+                
                 userCookie.Values["Username"] = encrypt.EncryptLogin(login_emailTxt.Text);
                 userCookie.Values["Password"] = encrypt.EncryptPass(login_passwordTxt.Text);
                 userCookie.Values["Preference"] = preference.LoginPreference;
                 userCookie.Values["PrivacyProfile"] = preference.PrivacyProfile;
                 userCookie.Values["PrivacyPhoto"] = preference.PrivacyPhoto;
                 userCookie.Values["PrivacyContactInfo"] = preference.PrivacyContactInfo;
+                userCookie.Values["Name"] = userLogin.GetName(login_emailTxt.Text);
                 userCookie.Expires = new DateTime(2025, 1, 1);
                 Response.Cookies.Add(userCookie);
                 Session["LoginStatus"] = "True";

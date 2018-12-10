@@ -315,6 +315,53 @@ namespace Classes
 
         }
 
+        public void SendMessage(string MessageText, string ThreadID, string UserName)
+        {
+            SqlCommand sqlSendMessage = new SqlCommand();
+            sqlSendMessage.CommandType = CommandType.StoredProcedure;
+            sqlSendMessage.CommandText = "TP_SendMessage";
+            sqlSendMessage.Parameters.Add(new SqlParameter("@TheMessageText", MessageText));
+            sqlSendMessage.Parameters.Add(new SqlParameter("@TheThreadID", ThreadID));
+            sqlSendMessage.Parameters.Add(new SqlParameter("@TheUserName", UserName));
+
+            db.DoUpdateUsingCmdObj(sqlSendMessage);
+        }
+
+        public DataSet GetThreads(string UserName)
+        {
+            SqlCommand sqlGetThreads = new SqlCommand();
+            sqlGetThreads.CommandType = CommandType.StoredProcedure;
+            sqlGetThreads.CommandText = "TP_GetThreads";
+            sqlGetThreads.Parameters.Add(new SqlParameter("@TheUserName", UserName));
+
+            DataSet threadsData = new DataSet();
+            threadsData = db.GetDataSetUsingCmdObj(sqlGetThreads);
+
+            return threadsData;
+        }
+        
+        public string GetName(string LoginID)
+        {
+            SqlCommand sqlGetName = new SqlCommand();
+            sqlGetName.CommandType = CommandType.StoredProcedure;
+            sqlGetName.CommandText = "TP_GetUserAccount";
+            sqlGetName.Parameters.Add(new SqlParameter("@LoginID", LoginID));
+
+            DataSet nameData = new DataSet();
+            nameData = db.GetDataSetUsingCmdObj(sqlGetName);
+            string name;
+
+            try
+            {
+                name = nameData.Tables[0].Rows[3].ToString();               
+            }
+            catch
+            {
+                name = "Error";
+            }
+            return name;  
+        }
+
     }
 
 }
