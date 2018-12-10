@@ -9,6 +9,5 @@ namespace Classes
     class WallPost
     {
         public string LoginID { get; set; }
-        public string LoginID { get; set; }
     }
 }

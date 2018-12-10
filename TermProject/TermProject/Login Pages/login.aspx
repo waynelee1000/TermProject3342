@@ -12,14 +12,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     
 <head runat="server">
-    <title>Facebook - Login or Register</title>
+    <title>Login or Register</title>
 </head>
 <body>
     <form id="mainFrm" runat="server">
     <!-- Header with login controls -->
     <header>
         <a href="login.aspx">
-            <img src="../Images/fb-word-white.png" class="logo"/>
+            <img src="../Images/logo.png" class="logo"/>
         </a>      
         
         <!-- Login form -->
