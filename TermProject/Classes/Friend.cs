@@ -32,24 +32,32 @@ namespace Classes
             string friendName = "";
             friendData = storedProcedure.getFriend(loginID);
 
-            if (friendData.Tables[0].Rows.Count != 0)
+            try
             {
-                foreach (int row in friendData.Tables[0].Rows)
+                if (friendData.Tables[0].Rows.Count != 0)
                 {
-                    if (friendData.Tables[0].Rows[row][1].ToString() != loginID)
+                    foreach (int row in friendData.Tables[0].Rows)
                     {
-                        friendName = friendData.Tables[0].Rows[row][1].ToString();
+                        if (friendData.Tables[0].Rows[row][1].ToString() != loginID)
+                        {
+                            friendName = friendData.Tables[0].Rows[row][1].ToString();
+                        }
+                        else
+                        {
+                            friendName = friendData.Tables[0].Rows[row][2].ToString();
+                        }
+                        Friend friend = new Friend(loginID, friendName, int.Parse(friendData.Tables[0].Rows[row][0].ToString()));
+                        friendList.Add(friend);
                     }
-                    else
-                    {
-                        friendName = friendData.Tables[0].Rows[row][2].ToString();
-                    }
-                    Friend friend = new Friend(loginID, friendName, int.Parse(friendData.Tables[0].Rows[row][0].ToString()));
-                    friendList.Add(friend);
                 }
+                return friendList;
             }
+            catch
+            {
+                return friendList;
 
-            return friendList;
+            }
+            
 
         }
 

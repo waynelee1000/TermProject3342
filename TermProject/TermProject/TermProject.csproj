@@ -78,9 +78,11 @@
     <Content Include="Login Pages\login-help.aspx" />
     <Content Include="Login Pages\login.aspx" />
     <Content Include="Main Pages\messages.aspx" />
+    <Content Include="Main Pages\NavButtons.ascx" />
     <Content Include="Main Pages\newsfeed.aspx" />
     <Content Include="Main Pages\preferences.aspx" />
     <Content Include="Main Pages\profile.aspx" />
+    <Content Include="Main Pages\PostComments.ascx" />
     <Content Include="ProfilePictures\defaultImage.jpg" />
     <Content Include="ProfilePictures\person1_gClooney.jpg" />
     <Content Include="Web.config" />
@@ -107,6 +109,13 @@
     <Compile Include="Main Pages\messages.aspx.designer.cs">
       <DependentUpon>messages.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Main Pages\NavButtons.ascx.cs">
+      <DependentUpon>NavButtons.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main Pages\NavButtons.ascx.designer.cs">
+      <DependentUpon>NavButtons.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Main Pages\newsfeed.aspx.cs">
       <DependentUpon>newsfeed.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -127,6 +136,13 @@
     </Compile>
     <Compile Include="Main Pages\profile.aspx.designer.cs">
       <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main Pages\PostComments.ascx.cs">
+      <DependentUpon>PostComments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main Pages\PostComments.ascx.designer.cs">
+      <DependentUpon>PostComments.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
