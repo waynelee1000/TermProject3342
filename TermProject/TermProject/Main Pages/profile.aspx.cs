@@ -62,9 +62,9 @@ namespace TermProject.Main_Pages
                 txtProfileZipCode.Text = profileData.ZipCode.ToString();
                 txtProfileOrgs.Text = profileData.Organization;
                 imgProfile.ImageUrl = profileData.ProfilePictureURL;
-            }
-            
 
+                loadPosts();
+            }
         }
 
         protected void btnConfirmation_Click(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace TermProject.Main_Pages
             Stream theDataStream = response.GetResponseStream();
             StreamReader reader = new StreamReader(theDataStream);
 
-
+            loadPosts();
 
             string data = reader.ReadToEnd();
 
@@ -270,7 +270,7 @@ namespace TermProject.Main_Pages
 
             string jsonNews = js.Serialize(newsFeed);
 
-            WebRequest request = WebRequest.Create("http://localhost:49241/api/NewsFeed?");
+            WebRequest request = WebRequest.Create("http://localhost:49241/api/NewsFeed");
             request.Method = "POST";
             request.ContentType = "application/json";
 
@@ -293,21 +293,23 @@ namespace TermProject.Main_Pages
 
             UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
             Label label = new Label();
-            label.ID = "test";
             label.Text = txtPostWall.Text;
             UpdatePanel1.ContentTemplateContainer.Controls.Add(label);
+
             Label label2 = new Label();
-            label2.ID = "test2";
             label2.Text = "Comments";
             UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
             UpdatePanel1.ContentTemplateContainer.Controls.Add(label2);
+
             TextBox textbox = new TextBox();
             textbox.ID = "textBox";
             UpdatePanel1.ContentTemplateContainer.Controls.Add(textbox);
             Button buttonComment = new Button();
-            buttonComment.ID = "btnComment";
             buttonComment.Text = "Post Comment";
+            buttonComment.Click += buttonComment_Click;
             UpdatePanel1.ContentTemplateContainer.Controls.Add(buttonComment);
+            UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<iframe src='https://stackoverflow.com/questions/2872741/dynamically-add-iframe-to-a-page'></iframe>"));
+            loadPosts();
         }
         public void loadPosts()
         {
@@ -339,12 +341,43 @@ namespace TermProject.Main_Pages
 
             foreach (NewsFeed x in newsFeedList)
             {
+                UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
                 Label label = new Label();
+
                 label.Text = x.NewsFeedMessage;
                 UpdatePanel1.ContentTemplateContainer.Controls.Add(label);
+
+                Label label2 = new Label();
+
+                label2.Text = "Comments";
+                UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
+                UpdatePanel1.ContentTemplateContainer.Controls.Add(label2);
+
+                TextBox textbox = new TextBox();
+                textbox.TextChanged += new System.EventHandler(this.textbox_Changed);
+                UpdatePanel1.ContentTemplateContainer.Controls.Add(textbox);
+
+                Button buttonComment = new Button();
+                buttonComment.Text = "Post Comment";
+                buttonComment.Click += buttonComment_Click;
+                UpdatePanel1.ContentTemplateContainer.Controls.Add(buttonComment);
                 UpdatePanel1.ContentTemplateContainer.Controls.Add(new LiteralControl("<br />"));
             }
         }
+
+        private void buttonComment_Click(object sender, EventArgs e)
+        {
+            UpdatePanel1.ChildrenAsTriggers = true;
+            loadPosts();
+        }
+
+        private void textbox_Changed(object sender, EventArgs e)
+        {
+            UpdatePanel1.ChildrenAsTriggers = false;
+        }
+
     }
+
+
 
 }

@@ -31,15 +31,18 @@ namespace TermProject
                         Preference preference = new Preference(login_emailTxt.Text);
 
                         userCookie.Values["Username"] = encrypt.EncryptLogin(login_emailTxt.Text);
-                        userCookie.Values["Password"] = userCookie.Values["Password"].ToString();
+                        userCookie.Values["Password"] = encrypt.EncryptPass(login_passwordTxt.Text);
                         userCookie.Values["Preference"] = preference.LoginPreference;
+                        userCookie.Values["PrivacyProfile"] = preference.PrivacyProfile;
+                        userCookie.Values["PrivacyPhoto"] = preference.PrivacyPhoto;
+                        userCookie.Values["PrivacyContactInfo"] = preference.PrivacyContactInfo;
                         userCookie.Expires = new DateTime(2025, 1, 1);
                         Response.Cookies.Add(userCookie);
 
                     }
                     else if (userCookie.Values["Preference"].ToString() == "assist")
                     {
-                        login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                        login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
                     }
                 }
 
@@ -56,7 +59,7 @@ namespace TermProject
                     }
                     else if (userCookie.Values["Preference"].ToString() == "assist")
                     {
-                        login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                        login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
                     }
                 }
             }
@@ -75,7 +78,7 @@ namespace TermProject
                     }
                     else if (userCookie.Values["Preference"].ToString() == "assist")
                     {
-                        login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                        login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
                     }
                 }
 

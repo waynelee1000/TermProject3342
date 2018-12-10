@@ -44,7 +44,6 @@ namespace API.Controllers
         [HttpGet]
         public List<NewsFeed> GetPersonalFeed(string loginID, string Password)
         {
-            NewsFeed newsFeed = new NewsFeed();
             List<NewsFeed> newsFeedsList = new List<NewsFeed>();
             DataSet personalFeed = new DataSet();
 
@@ -55,12 +54,14 @@ namespace API.Controllers
             {
                 if (oldkey == "-1")
                 {
+                    NewsFeed newsFeed = new NewsFeed();
                     newsFeed.LoginID = rows["LoginID"].ToString();
                     newsFeed.NewsFeedMessage = rows["NewsFeed"].ToString();
                     newsFeedsList.Add(newsFeed);
                 }
                 else if (oldkey != rows["NewsFeedID"].ToString())
                 {
+                    NewsFeed newsFeed = new NewsFeed();
                     newsFeed.LoginID = rows["LoginID"].ToString();
                     newsFeed.NewsFeedMessage = rows["NewsFeed"].ToString();
                     newsFeedsList.Add(newsFeed);
