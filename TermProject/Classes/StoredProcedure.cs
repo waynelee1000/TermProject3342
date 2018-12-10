@@ -353,13 +353,25 @@ namespace Classes
 
             try
             {
-                name = nameData.Tables[0].Rows[3].ToString();               
+                name = nameData.Tables[0].Rows[0][0].ToString();
             }
             catch
             {
                 name = "Error";
             }
             return name;  
+        }
+
+        public DataSet GetMessages(string threadID)
+        {
+            SqlCommand sqlGetMessages = new SqlCommand();
+            sqlGetMessages.CommandType = CommandType.StoredProcedure;
+            sqlGetMessages.CommandText = "TP_GetMessages";
+            sqlGetMessages.Parameters.Add(new SqlParameter("@ThreadID", threadID));
+
+            DataSet messagesDS = new DataSet();
+            messagesDS = db.GetDataSetUsingCmdObj(sqlGetMessages);
+            return messagesDS;
         }
 
     }

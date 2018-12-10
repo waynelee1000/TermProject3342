@@ -20,9 +20,12 @@
             </div>
         </header>
         <div id="main">
-            Select Conversation: <asp:DropDownList ID="threadsDDL" runat="server" OnSelectedIndexChanged="threadsDDL_SelectedIndexChanged"></asp:DropDownList><br />
-            Create New Conversation: <asp:DropDownList ID="newThreadDDL" runat="server"></asp:DropDownList>
-            <asp:Button ID="newThreadBtn" runat="server" Text="New Conversation" OnClick="newThreadBtn_Click"/>
+            Select Conversation: <asp:DropDownList ID="threadsDDL" runat="server" OnSelectedIndexChanged="threadsDDL_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList><br />
+            <asp:Button ID="showFriendsBtn" runat="server" Text="Start New Conversation" OnClick="showFriendsBtn_Click" />
+
+            <asp:CheckBoxList ID="newThreadCBL" runat="server"></asp:CheckBoxList>                      
+            <asp:Button ID="newThreadBtn" runat="server" Text="Create" OnClick="newThreadBtn_Click"/>
+
             <div id="messagingWindow">
                 <div id="threadDisplay">
                     <asp:GridView ID="threadGrid" runat="server" ShowHeader="false" ShowFooter="true" AllowPaging="true" 
@@ -40,7 +43,7 @@
                         <asp:TextBox ID="messageTxt" runat="server"></asp:TextBox>
                     </div>
                     <div id="messageBtnDiv">
-                        <asp:Button ID="messageBtn" runat="server" Text="Send" />
+                        <asp:Button ID="messageBtn" runat="server" Text="Send" OnClick="messageBtn_Click"/>
                     </div>
                 </div>
             </div>
