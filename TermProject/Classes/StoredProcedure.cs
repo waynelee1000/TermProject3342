@@ -296,7 +296,7 @@ namespace Classes
             sqlAddNewsFeed.CommandText = "TP_AddNewsFeed";
             sqlAddNewsFeed.Parameters.Add(new SqlParameter("@LoginID", LoginID));
             sqlAddNewsFeed.Parameters.Add(new SqlParameter("@NewsFeed", NewsFeed));
-            sqlAddNewsFeed.Parameters.Add(new SqlParameter("@NewsFeedID", 0));
+            sqlAddNewsFeed.Parameters.Add(new SqlParameter("@NewsFeedID", 1));
 
             db.DoUpdateUsingCmdObj(sqlAddNewsFeed);
 

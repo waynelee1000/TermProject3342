@@ -17,78 +17,85 @@ namespace TermProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpCookie userCookie = Request.Cookies["UserCookie"];
+            if (!IsPostBack){
+                HttpCookie userCookie = Request.Cookies["UserCookie"];
+                UserLogin userLogin = new UserLogin();
 
-            Encrypt encrypt = new Encrypt();
+                Encrypt encrypt = new Encrypt();
 
-            if (Session["LoginStatus"] != null)
-            {
-                if (Session["LoginStatus"].ToString() == "False")
+                if (Session["LoginStatus"] != null)
                 {
-                    if (userCookie.Values["Preference"].ToString() == "automatic")
+                    if (Session["LoginStatus"].ToString() == "False")
                     {
-                        login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
-                        Preference preference = new Preference(login_emailTxt.Text);
+                        if (userCookie.Values["Preference"].ToString() == "automatic")
+                        {
+                            login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
+                            Preference preference = new Preference(login_emailTxt.Text);
 
-                        userCookie.Values["Username"] = encrypt.EncryptLogin(login_emailTxt.Text);
-                        userCookie.Values["Password"] = encrypt.EncryptPass(login_passwordTxt.Text);
-                        userCookie.Values["Preference"] = preference.LoginPreference;
-                        userCookie.Values["PrivacyProfile"] = preference.PrivacyProfile;
-                        userCookie.Values["PrivacyPhoto"] = preference.PrivacyPhoto;
-                        userCookie.Values["PrivacyContactInfo"] = preference.PrivacyContactInfo;
-                        userCookie.Expires = new DateTime(2025, 1, 1);
-                        Response.Cookies.Add(userCookie);
+                            userCookie.Values["Username"] = encrypt.EncryptLogin(login_emailTxt.Text);
+                            userCookie.Values["Password"] = encrypt.EncryptPass(login_passwordTxt.Text);
+                            userCookie.Values["Preference"] = preference.LoginPreference;
+                            userCookie.Values["PrivacyProfile"] = preference.PrivacyProfile;
+                            userCookie.Values["PrivacyPhoto"] = preference.PrivacyPhoto;
+                            userCookie.Values["PrivacyContactInfo"] = preference.PrivacyContactInfo;
+                            userCookie.Values["Name"] = userLogin.GetName(login_emailTxt.Text);
+                            userCookie.Expires = new DateTime(2025, 1, 1);
+                            Response.Cookies.Add(userCookie);
 
+                        }
+                        else if (userCookie.Values["Preference"].ToString() == "assist")
+                        {
+                            login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
+                        }
                     }
-                    else if (userCookie.Values["Preference"].ToString() == "assist")
+
+                    else
                     {
-                        login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
+
+                        if (userCookie.Values["Preference"].ToString() == "automatic")
+                        {
+                            login_emailTxt.Text = userCookie.Values["Username"].ToString();
+                            Session["LoginStatus"] = "True";
+
+                            Response.Redirect(url: "~/Main Pages/newsfeed.aspx");
+
+                        }
+                        else if (userCookie.Values["Preference"].ToString() == "assist")
+                        {
+                            login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
+                        }
                     }
                 }
-
                 else
                 {
-
-                    if (userCookie.Values["Preference"].ToString() == "automatic")
+                    if (userCookie != null)
                     {
-                        login_emailTxt.Text = userCookie.Values["Username"].ToString();
-                        Session["LoginStatus"] = "True";
+                        if (userCookie.Values["Preference"].ToString() == "automatic")
+                        {
+                            login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
+                            login_passwordTxt.Text = encrypt.Decrypt(userCookie.Values["Password"].ToString());
 
-                        Response.Redirect(url: "~/Main Pages/newsfeed.aspx");
+                            Session["LoginStatus"] = "True";
 
+                            Response.Redirect(url: "~/Main Pages/newsfeed.aspx");
+                        }
+                        else if (userCookie.Values["Preference"].ToString() == "assist")
+                        {
+                            login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
+                        }
                     }
-                    else if (userCookie.Values["Preference"].ToString() == "assist")
-                    {
-                        login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
-                    }
+
                 }
             }
-            else
-            {
-                if (userCookie != null)
-                {
-                    if (userCookie.Values["Preference"].ToString() == "automatic")
-                    {
-                        login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
-                        login_passwordTxt.Text = encrypt.Decrypt(userCookie.Values["Password"].ToString());
-
-                        Session["LoginStatus"] = "True";
-
-                        Response.Redirect(url: "~/Main Pages/newsfeed.aspx");
-                    }
-                    else if (userCookie.Values["Preference"].ToString() == "assist")
-                    {
-                        login_emailTxt.Text = encrypt.Decrypt(userCookie.Values["Username"].ToString());
-                    }
-                }
-
-            }
+            
         }
         protected void login_Btn_Click(object sender, EventArgs e)
         {
             Encrypt encrypt = new Encrypt();
             UserLogin userLogin = new UserLogin();
-            string result = userLogin.loginUser(login_emailTxt.Text, login_passwordTxt.Text);
+            string loginID = login_emailTxt.Text;
+            string password = login_passwordTxt.Text;
+            string result = userLogin.loginUser(loginID, password);
             if (result != "Error")
             {
                 Preference preference = new Preference(login_emailTxt.Text);

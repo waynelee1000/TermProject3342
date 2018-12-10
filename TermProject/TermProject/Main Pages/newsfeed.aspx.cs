@@ -42,7 +42,11 @@ namespace TermProject.Main_Pages
             NavButtons nav = (NavButtons)LoadControl("NavButtons.ascx");
             headerButtons.Controls.Add(nav);
 
-            loadPosts();
+            if (!IsPostBack)
+            {
+                loadPosts();
+            }
+            
 
         }
 

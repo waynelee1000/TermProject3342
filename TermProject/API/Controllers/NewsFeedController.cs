@@ -93,7 +93,8 @@ namespace API.Controllers
 
             foreach (Friend x in friend.Friendlist(loginID))
             {
-                allfeed = storedProcedure.GetNewsFeed(x.FriendLoginID.ToString());
+                string friendLogin = x.FriendLoginID.ToString();
+                allfeed = storedProcedure.GetNewsFeed(friendLogin);
 
 
                 string oldkey2 = "-1";
