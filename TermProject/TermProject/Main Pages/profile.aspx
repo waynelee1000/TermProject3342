@@ -54,7 +54,7 @@
             <br />
             <asp:TextBox ID="txtPostWall" runat="server" Width="805px"></asp:TextBox><asp:Button ID="btnPost" runat="server" Text="Post" OnClick="btnPost_Click" />
 
-        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server" EnableViewState="False">
             <ContentTemplate>
                 <br />
             </ContentTemplate>
@@ -62,7 +62,7 @@
                 <asp:AsyncPostBackTrigger ControlID="Timer1" EventName="Tick" />
             </Triggers>
         </asp:UpdatePanel>
-        <asp:Timer ID="Timer1" runat="server" Interval="5000" OnTick="Timer1_Tick"></asp:Timer>
+        <asp:Timer ID="Timer1" runat="server" Interval="10000" OnTick="Timer1_Tick"></asp:Timer>
 
     </form>
 </body>

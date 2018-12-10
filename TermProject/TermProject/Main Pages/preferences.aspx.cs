@@ -43,20 +43,25 @@ namespace TermProject.Main_Pages
 
         protected void btn_LoginPref_Click(object sender, EventArgs e)
         {
+            Encrypt encrypt = new Encrypt();
             HttpCookie userCookie = Request.Cookies["UserCookie"];
 
             string newLoginPref =  DDL_LoginPref.SelectedValue.ToString();
 
-            updatePreference.updateLoginPref(userCookie.Values["Username"].ToString(), newLoginPref);
+            updatePreference.updateLoginPref(encrypt.Decrypt(userCookie.Values["Username"]).ToString(), newLoginPref);
 
             lbl_CurrentLoginPref.Text = newLoginPref;
+
+            string PhotoStatus = userCookie.Values["PrivacyPhoto"].ToString();
+            string ProfileStatus = userCookie.Values["PrivacyProfile"].ToString(); ;
+            string ContactStatus = userCookie.Values["PrivacyContactInfo"].ToString();
 
             userCookie.Values["Username"] = userCookie.Values["Username"].ToString();
             userCookie.Values["Password"] = userCookie.Values["Password"].ToString();
             userCookie.Values["Preference"] = newLoginPref;
-            userCookie.Values["PhotosPref"] = userCookie.Values["PhotosPref"].ToString();
-            userCookie.Values["ProfilePref"] = userCookie.Values["ProfilePref"].ToString();
-            userCookie.Values["ContactPref"] = userCookie.Values["ContactPref"].ToString();
+            userCookie.Values["PrivacyPhoto"] = PhotoStatus;
+            userCookie.Values["PrivacyProfile"] = ProfileStatus;
+            userCookie.Values["PrivacyContactInfo"] = ContactStatus;
             userCookie.Expires = new DateTime(2025, 1, 1);
             Response.Cookies.Add(userCookie);
             

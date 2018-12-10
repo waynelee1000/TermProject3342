@@ -246,7 +246,7 @@ namespace Classes
         {
             SqlCommand sqlUpdatePrivacy = new SqlCommand();
             sqlUpdatePrivacy.CommandType = CommandType.StoredProcedure;
-            sqlUpdatePrivacy.CommandText = "TP_UpdateProfile";
+            sqlUpdatePrivacy.CommandText = "TP_UpdatePrivacy";
             sqlUpdatePrivacy.Parameters.Add(new SqlParameter("@LoginID", LoginID));
             sqlUpdatePrivacy.Parameters.Add(new SqlParameter("@PrivacyProfile", ProfilePref));
             sqlUpdatePrivacy.Parameters.Add(new SqlParameter("@PrivacyPhoto", PhotosPref));
@@ -296,7 +296,7 @@ namespace Classes
             sqlAddNewsFeed.CommandText = "TP_AddNewsFeed";
             sqlAddNewsFeed.Parameters.Add(new SqlParameter("@LoginID", LoginID));
             sqlAddNewsFeed.Parameters.Add(new SqlParameter("@NewsFeed", NewsFeed));
-
+            sqlAddNewsFeed.Parameters.Add(new SqlParameter("@NewsFeedID", 0));
 
             db.DoUpdateUsingCmdObj(sqlAddNewsFeed);
 
