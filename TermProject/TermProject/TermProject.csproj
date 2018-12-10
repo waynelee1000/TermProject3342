@@ -74,10 +74,7 @@
     <Content Include="App_Themes\Login\login-stylesheet.css" />
     <Content Include="App_Themes\Dark\dark-stylesheet.css" />
     <Content Include="App_Themes\Light\light-stylesheet.css" />
-    <Content Include="Images\fb-square-blue.png" />
-    <Content Include="Images\fb-square-white.jpg" />
-    <Content Include="Images\fb-white-logo.png" />
-    <Content Include="Images\fb-word-white.png" />
+    <Content Include="Images\logo.png" />
     <Content Include="Login Pages\login-help.aspx" />
     <Content Include="Login Pages\login.aspx" />
     <Content Include="Main Pages\messages.aspx" />

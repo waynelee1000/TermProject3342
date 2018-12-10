@@ -2,12 +2,13 @@
 header {
     height: 40px;
     width: 100%;
-    background-color: #3C5A99;
+    background-color: #40bf7d;
 }
 
 .logo {
     float: left;
     height: 40px;
+    padding-left: 5px;
 }
 
 body {

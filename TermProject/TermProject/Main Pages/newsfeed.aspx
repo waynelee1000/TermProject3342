@@ -4,13 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Newsfeed</title>
 </head>
 <body>
     <form runat="server">
         <header>
             <a href="newsfeed.aspx">
-                <img src="../Images/fb-white-logo.png" class="logo"/>
+                <img src="../Images/logo.png" class="logo"/>
             </a>
             <div id="headerButtons" style="float:right;">
                 <asp:Button class="headerBtn" ID="logoutBtn" runat="server" Text="Logout" OnClick="logoutBtn_Click" />

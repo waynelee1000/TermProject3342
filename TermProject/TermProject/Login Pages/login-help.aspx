@@ -4,12 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Facebook - Forgot Login</title>
+    <title>Forgot Login</title>
 </head>
 <body>
     <header>  
         <a href="login.aspx" style="color:snow;">
-            <img src="../Images/fb-word-white.png" class="logo"/>
+            <img src="../Images/logo.png" class="logo"/>
             <h2>Home</h2>
         </a>
     </header>
