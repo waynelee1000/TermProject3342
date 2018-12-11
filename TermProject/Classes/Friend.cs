@@ -107,5 +107,20 @@ namespace Classes
             return friendArr;
 
         }
+
+        public string[] GetNameArray(Friend[] friendArray)
+        {
+            StoredProcedure storedProcedure = new StoredProcedure();
+            string[] newArray = new string[friendArray.Length - 1];
+            for (int i = 0; i < friendArray.Length - 1; i++)
+            {
+                Friend thisFriend = new Friend();
+                thisFriend = friendArray[i];
+                string thisLogin = thisFriend.LoginID;
+                string thisName = storedProcedure.GetName(thisLogin);
+                newArray[i] = thisName;
+            }
+            return newArray;
+        }
     }
 }

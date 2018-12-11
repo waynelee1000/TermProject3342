@@ -58,13 +58,22 @@ namespace TermProject.Main_Pages {
         protected global::System.Web.UI.WebControls.DropDownList threadsDDL;
         
         /// <summary>
-        /// newThreadDDL control.
+        /// showFriendsBtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList newThreadDDL;
+        protected global::System.Web.UI.WebControls.Button showFriendsBtn;
+        
+        /// <summary>
+        /// newThreadCBL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList newThreadCBL;
         
         /// <summary>
         /// newThreadBtn control.
