@@ -79,12 +79,21 @@ namespace TermProject.Main_Pages
             if (uploadProfilePicture.HasFile)
             {
                 //create the path to save the file to
-                string fileName = Path.Combine(Server.MapPath("~/ProfilePictures"), encrypt.Decrypt(userCookie.Values["Username"].ToString()) + "_" + uploadProfilePicture.FileName);
+                string fileName = Path.Combine(Server.MapPath("http://cis-iis2.temple.edu/Fall2018/CIS3342_tug11961/TermProject/storage/"), encrypt.Decrypt(userCookie.Values["Username"].ToString()) + "_" + uploadProfilePicture.FileName);
                 //save the file to our local path
                 uploadProfilePicture.SaveAs(fileName);
-                imgProfile.ImageUrl = "../ProfilePictures/" + encrypt.Decrypt(userCookie.Values["Username"].ToString()) + "_" + uploadProfilePicture.FileName;
+                imgProfile.ImageUrl = "http://cis-iis2.temple.edu/Fall2018/CIS3342_tug11961/TermProject/storage/" + encrypt.Decrypt(userCookie.Values["Username"].ToString()) + "_" + uploadProfilePicture.FileName;
 
+                storedProcedure.addPhotos(encrypt.Decrypt(userCookie.Values["Username"].ToString()), imgProfile.ImageUrl.ToString());
+            }
 
+            if (uploadPhotos.HasFiles)
+            {
+                string fileName = Path.Combine(Server.MapPath("http://cis-iis2.temple.edu/Fall2018/CIS3342_tug11961/TermProject/storage/"), encrypt.Decrypt(userCookie.Values["Username"].ToString()) + "_" + uploadPhotos.FileName);
+                //save the file to our local path
+                uploadProfilePicture.SaveAs(fileName);
+                imgProfile.ImageUrl = "http://cis-iis2.temple.edu/Fall2018/CIS3342_tug11961/TermProject/storage/" + encrypt.Decrypt(userCookie.Values["Username"].ToString()) + "_" + uploadPhotos.FileName;
+                storedProcedure.addPhotos(encrypt.Decrypt(userCookie.Values["Username"].ToString()), imgProfile.ImageUrl.ToString());
             }
             user.LoginID = userCookie.Values["Username"].ToString();
             user.Password = userCookie.Values["Password"].ToString();

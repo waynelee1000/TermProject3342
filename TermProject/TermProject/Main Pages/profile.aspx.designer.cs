@@ -58,6 +58,15 @@ namespace TermProject.Main_Pages {
         protected global::System.Web.UI.WebControls.Button btnEditMode;
         
         /// <summary>
+        /// bntViewPhoto control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button bntViewPhoto;
+        
+        /// <summary>
         /// uploadProfilePicture control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace TermProject.Main_Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload uploadProfilePicture;
+        
+        /// <summary>
+        /// uploadPhotos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload uploadPhotos;
         
         /// <summary>
         /// txtProfileName control.
@@ -245,5 +263,14 @@ namespace TermProject.Main_Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.Timer Timer1;
+        
+        /// <summary>
+        /// gvPhotos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvPhotos;
     }
 }

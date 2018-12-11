@@ -20,9 +20,12 @@
         <div>
             <asp:Image ID="imgProfile" runat="server" Height="140px" Width="120px" />
             <asp:Button ID="btnEditMode" runat="server" Text="Edit Mode" OnClick="btnEditMode_Click" />
+            <asp:Button ID="bntViewPhoto" runat="server" Text="ViewPictures" OnClick="bntViewPhoto_Click" />
         </div>
         <div>
             Profile Picture:<asp:FileUpload ID="uploadProfilePicture" runat="server" Visible ="false" />
+            <br />
+            Upload Picture:<asp:FileUpload ID="uploadPhotos" runat="server"  />
         </div>
         <div>
             <asp:TextBox ID="txtProfileName" runat="server" ReadOnly ="true"></asp:TextBox><asp:Button ID="btnEditName" runat="server" Text="Edit" Visible ="false" OnClick="btnEditName_Click"/>
@@ -46,6 +49,10 @@
         <asp:Button ID="btnConfirmation" runat="server" Text="Update" OnClick="btnConfirmation_Click" Visible ="false" />
 
         <br />
+        <br />
+        <br />
+
+        <br />
             Profile Wall
             <br />
             <asp:TextBox ID="txtPostWall" runat="server" Width="805px"></asp:TextBox><asp:Button ID="btnPost" runat="server" Text="Post" OnClick="btnPost_Click" />
@@ -59,6 +66,13 @@
             </Triggers>
         </asp:UpdatePanel>
         <asp:Timer ID="Timer1" runat="server" Interval="10000" OnTick="Timer1_Tick"></asp:Timer>
+                <asp:GridView ID="gvPhotos" runat ="server" Visible ="true" AutoGenerateColumns ="false">
+            <Columns>
+                <asp:ImageField DataImageUrlField ="PictureUrl">
+                </asp:ImageField>
+                <asp:BoundField DataField="Description"/><asp:BoundField />
+            </Columns>
+        </asp:GridView>
 
     </form>
 </body>

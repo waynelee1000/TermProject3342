@@ -373,6 +373,17 @@ namespace Classes
             messagesDS = db.GetDataSetUsingCmdObj(sqlGetMessages);
             return messagesDS;
         }
+        public void addPhotos(string loginID, string pictureURL)
+        {
+            SqlCommand sqlAddPhotos = new SqlCommand();
+            sqlAddPhotos.CommandType = CommandType.StoredProcedure;
+            sqlAddPhotos.CommandText = "TP_AddPictures";
+            sqlAddPhotos.Parameters.Add(new SqlParameter("@LoginID", loginID));
+            sqlAddPhotos.Parameters.Add(new SqlParameter("@PictureURL", pictureURL));
+
+            db.DoUpdateUsingCmdObj(sqlAddPhotos);
+
+        }
 
     }
 
